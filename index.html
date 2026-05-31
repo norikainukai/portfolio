@@ -18,7 +18,7 @@
 				position: relative;
 				border-radius: 8px;
 				overflow: hidden;
-				background: #1c1c1c; /* 読み込み中も違和感のないダークグレー */
+				background: #1c1c1c;
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 				transition: transform 0.4s ease, box-shadow 0.4s ease;
 				cursor: pointer;
@@ -27,7 +27,6 @@
 				width: 100%;
 				height: 360px;
 				display: block;
-				/* 👇 ここが横長写真でも歪まない魔法！真ん中でかっこよく切り抜きます */
 				object-fit: cover;
 				filter: brightness(0.85) contrast(1.05);
 				transition: transform 0.5s ease, filter 0.5s ease;
@@ -48,6 +47,14 @@
 				font-size: 1.1em;
 				letter-spacing: 0.1em;
 			}
+
+			/* 🎨 背景をサイバー・ディープパープル＆ブルーに染める魔法 */
+			#bg:after {
+				background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url("images/bg.jpg");
+			}
+			#bg:before {
+				background-image: linear-gradient(135deg, rgba(81, 45, 168, 0.4) 0%, rgba(0, 188, 212, 0.3) 100%);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -56,7 +63,7 @@
 
 			<header id="header">
 				<div class="logo">
-					<span class="icon fa-gem"></span>
+					<span class="icon fa-theater-masks"></span>
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -79,7 +86,7 @@
 
 				<article id="intro">
 					<h2 class="major">Profile</h2>
-					<span class="image main"><img src="pic01.jpg" alt="犬飼紀香 宣材写真" /></span>
+					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 					
@@ -93,7 +100,7 @@
 
 				<article id="work">
 					<h2 class="major">Data</h2>
-					<span class="image main"><img src="pic02.jpg" alt="犬飼紀香 宣材写真全身" /></span>
+					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
 					<p>各種データや出演実績の映像資料リンクです。クリックすると動画や書類が開きます。</p>
 					
 					<h3 class="section-title">プロフィール・コンポジ</h3>
@@ -148,19 +155,19 @@
 					<p>被写体・宣材写真などのギャラリーです。</p>
 					
 					<div class="photo-grid">		
-						<div class="photo-item"><img src="pic03.jpg" alt="写真3" /></div>
-						<div class="photo-item"><img src="pic04.jpg" alt="写真4" /></div>
-						<div class="photo-item"><img src="pic05.jpg" alt="写真5" /></div>
-						<div class="photo-item"><img src="pic06.jpg" alt="写真6" /></div>
-						<div class="photo-item"><img src="pic07.jpg" alt="写真7" /></div>
-						<div class="photo-item"><img src="pic08.jpg" alt="写真8" /></div>
-						<div class="photo-item"><img src="pic09.jpg" alt="写真9" /></div>
-						<div class="photo-item"><img src="pic10.jpg" alt="写真10" /></div>
-						<div class="photo-item"><img src="pic11.jpg" alt="写真11" /></div>
-						<div class="photo-item"><img src="pic12.jpg" alt="写真12" /></div>
-						<div class="photo-item"><img src="pic13.jpg" alt="写真13" /></div>
-						<div class="photo-item"><img src="pic14.jpg" alt="写真14" /></div>
-						<div class="photo-item"><img src="pic15.jpg" alt="写真15" /></div>
+						<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
+						<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
+						<div class="photo-item"><img src="pic05.jpg.jpg" alt="写真5" /></div>
+						<div class="photo-item"><img src="pic06.jpg.jpg" alt="写真6" /></div>
+						<div class="photo-item"><img src="pic07.jpg.jpg" alt="写真7" /></div>
+						<div class="photo-item"><img src="pic08.jpg.jpg" alt="写真8" /></div>
+						<div class="photo-item"><img src="pic09.jpg.jpg" alt="写真9" /></div>
+						<div class="photo-item"><img src="pic10.JPG" alt="写真10" /></div>
+						<div class="photo-item"><img src="pic11.JPG" alt="写真11" /></div>
+						<div class="photo-item"><img src="pic12.JPG" alt="写真12" /></div>
+						<div class="photo-item"><img src="pic13.JPG" alt="写真13" /></div>
+						<div class="photo-item"><img src="pic14.JPG" alt="写真14" /></div>
+						<div class="photo-item"><img src="pic15.JPG" alt="写真15" /></div>
 					</div>
 				</article>
 
@@ -176,28 +183,4 @@
 					
 					<h3 class="section-title">Official SNS Links</h3>
 					<ul class="actions stacked">
-						<li><a href="https://www.instagram.com/norika_inukai?igsh=MWkyMG50czQ2anJ2eg%3D%3D&utm_source=qr" class="button" target="_blank">📷 Instagram (日常アカウント @norika_inukai)</a></li>
-						<li><a href="https://www.instagram.com/norika_picture?igsh=dHpoZDJwNmNlbTR3" class="button" target="_blank">📷 Instagram (被写体アカウント @norika_picture)</a></li>
-						<li><a href="https://www.tiktok.com/@kagakuotaku?_r=1&_t=ZS-91Hj0e6mgCa" class="button" target="_blank">🎵 TikTok (@kagakuotaku)</a></li>
-						<li><a href="https://www.youtube.com/channel/UCvYsROBFthmNpJ3utHUGhnw" class="button" target="_blank">📺 YouTube (@kagakuotaku)</a></li>
-					</ul>
-				</article>
-
-			</div>
-
-			<footer id="footer">
-				<p class="copyright">&copy; norikainukai. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
-
-		</div>
-
-		<div id="bg"></div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+						<li><a href="https://www.
