@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* 写真を綺麗に並べるためのコード */
+			/* 今後写真が何枚に増えても自動で綺麗に並べるための魔法のデザイン */
 			.photo-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -55,14 +55,14 @@
 
 						<article id="intro">
 								<h2 class="major">Profile</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="犬飼紀香 宣材写真" /></span>
+								<span class="image main"><img src="photo01.jpg" alt="犬飼紀香 宣材写真" /></span>
 								<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 								<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 							</article>
 
 						<article id="work">
 								<h2 class="major">Data</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="犬飼紀香 宣材写真全身" /></span>
+								<span class="image main"><img src="photo02.jpg" alt="犬飼紀香 宣材写真全身" /></span>
 								<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
 								
 								<ul class="actions stacked">
@@ -77,16 +77,8 @@
 								<h2 class="major">Photos</h2>
 								<p>被写体・宣材写真などのギャラリーです。</p>
 								
-								<div class="photo-grid">
-									<div class="photo-item"><img src="images/pic01.jpg" alt="宣材" /></div>
-									<div class="photo-item"><img src="images/pic02.jpg" alt="全身" /></div>
-									<div class="photo-item"><img src="images/pic03.jpg" alt="白トップス" /></div>
-									<div class="photo-item"><img src="images/pic04.jpg" alt="サイエンス1" /></div>
-									<div class="photo-item"><img src="images/pic05.jpg" alt="サイエンス2" /></div>
-									<div class="photo-item"><img src="images/pic06.jpg" alt="外ポトレ" /></div>
-									<div class="photo-item"><img src="images/pic07.jpg" alt="外笑顔" /></div>
-									<div class="photo-item"><img src="images/pic08.jpg" alt="袴姿" /></div>
-								</div>
+								<div class="photo-grid" id="gallery-container">
+									</div>
 							</article>
 
 						<article id="contact">
@@ -113,6 +105,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+			const container = document.getElementById('gallery-container');
+			const maxPhotos = 100; // 最大100枚まで勝手に検知します
+			
+			for (let i = 1; i <= maxPhotos; i++) {
+				// 1桁の数字（1〜9）の場合は前に「0」をつけて「01, 02」にする
+				const photoNum = String(i).padStart(2, '0');
+				const imgUrl = `photo${photoNum}.jpg`;
+				
+				const img = new Image();
+				img.src = imgUrl;
+				img.onload = function() {
+					const item = document.createElement('div');
+					item.className = 'photo-item';
+					item.style.order = i; // 数字の順番通りに並べる
+					item.appendChild(img);
+					container.appendChild(item);
+				};
+			}
+		</script>
 
 	</body>
 </html>
