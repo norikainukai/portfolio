@@ -6,62 +6,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+		
 		<style>
-			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; font-weight: 300; letter-spacing: 0.12em; }
-			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; letter-spacing: 0.2em !important; text-transform: none !important; }
-			#header h1 { font-size: 2.5em; font-weight: 500; margin-bottom: 0.2em; }
-			#header p.name-en { font-size: 0.85em; font-style: italic; color: rgba(255, 255, 255, 0.7); border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 1.5em; margin-bottom: 1.5em; }
-			.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px; }
-			.photo-item { position: relative; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease; cursor: pointer; }
-			.photo-item img { width: 100%; height: 380px; display: block; object-fit: cover; object-position: top center; filter: brightness(0.8) contrast(1.02); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease; }
-			.photo-item:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9); }
-			.photo-item:hover img { transform: scale(1.05); filter: brightness(0.95) contrast(1.05); }
-			h2.major { text-align: center !important; margin-bottom: 2em !important; }
-			h2.major:after { left: 50% !important; transform: translateX(-50%); width: 60px !important; }
+			/* 👁️ 100%確実に見える：文字をすべて漆黒、文字の後ろを白のボードに設定！ */
+			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; letter-spacing: 0.08em; color: #111111 !important; }
+			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; letter-spacing: 0.15em !important; text-transform: none !important; color: #111111 !important; }
 			
-			/* 💡 見出し（h3）はパキッと不透明な純白に固定！ */
-			h3.section-title { border-left: none; border-bottom: 1px solid rgba(255, 255, 255, 0.4); padding-bottom: 5px; padding-left: 0; margin-top: 40px; margin-bottom: 20px; font-size: 1.0em; font-weight: 500; color: #ffffff !important; opacity: 1 !important; }
+			/* メイン画面を読みやすい白紙（ブライトホワイト）にする命令 */
+			article { background-color: #ffffff !important; padding: 40px 30px !important; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 1px solid #ddd; }
 			
-			/* 💡 どんな背景でも絶対に負けない、クッキリ美しい配色に上書き！ */
-			.credit-list { list-style: none; padding-left: 0; font-size: 0.9em; line-height: 1.8; color: #e0e0e0 !important; opacity: 1 !important; }
-			.credit-list li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; color: #e0e0e0 !important; }
-			.credit-list li strong { color: #ffffff !important; font-weight: 500; }
-			.credit-list span.date { color: #00f2fe !important; font-family: 'Playfair Display', serif; margin-right: 15px; font-size: 0.95em; font-weight: bold; }
-			.credit-list a { color: #00f2fe !important; text-decoration: none; border-bottom: 1px dashed rgba(0,242,254,0.5); transition: all 0.3s; font-weight: bold; }
-			.credit-list a:hover { color: #fff !important; border-bottom-color: #fff; }
+			/* 各ページの見出し */
+			h2.major { text-align: center !important; margin-bottom: 1.5em !important; color: #111111 !important; }
+			h2.major:after { left: 50% !important; transform: translateX(-50%); width: 60px !important; border-bottom-color: #111111 !important; }
 			
-			.force-white { color: #e0e0e0 !important; opacity: 1 !important; font-weight: 300 !important; }
+			/* セクションの見出し（黒いアンダーライン） */
+			h3.section-title { border-left: none; border-bottom: 2px solid #111111; padding-bottom: 5px; padding-left: 0; margin-top: 35px; margin-bottom: 20px; font-size: 1.05em; font-weight: 700; color: #111111 !important; }
 			
-			.button { border-radius: 6px !important; border-color: rgba(255, 255, 255, 0.3) !important; background-color: rgba(255, 255, 255, 0.02) !important; transition: all 0.3s ease; }
-			.button:hover { background-color: rgba(255, 255, 255, 0.1) !important; border-color: #fff !important; box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
-			.button.primary { background-color: rgba(255, 255, 255, 0.9) !important; color: #111 !important; font-weight: 500; }
-			.button.primary:hover { background-color: #fff !important; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+			/* テキストやリストをすべてハッキリした黒に変更 */
+			article p, article li, .force-white { color: #111111 !important; opacity: 1 !important; font-weight: 400 !important; line-height: 1.8; }
 			
-			/* 🎨 古い砂漠背景をねじ伏せる、超おしゃれなディープナイトグラデーション */
-			#bg:after { background-image: radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.95)), url("images/bg.jpg"); }
-			#bg:before { background-image: linear-gradient(140deg, rgba(30, 15, 90, 0.6) 10%, rgba(0, 60, 70, 0.5) 60%, rgba(10, 15, 30, 0.7) 100%); }
+			/* 📜 スラッシュ区切りの実績用スタイリング */
+			.credit-list { list-style: none; padding-left: 0; font-size: 0.92em; line-height: 1.8; }
+			.credit-list li { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; color: #111111 !important; }
+			.credit-list span.date { color: #0066cc !important; font-family: 'Playfair Display', serif; margin-right: 10px; font-size: 0.95em; font-weight: 700; }
+			
+			/* スラッシュ並びの文章用スタイル */
+			.inline-credits { font-size: 0.9em; line-height: 2; color: #111111 !important; text-align: justify; }
+			
+			/* リンクの文字（一番ハッキリ見えてプロっぽい濃い青） */
+			.credit-list a { color: #0055ff !important; text-decoration: underline !important; font-weight: 700; }
+			.credit-list a:hover { color: #0033aa !important; }
+			
+			/* 🔲 ボタンのデザイン（白背景に映える黒枠デザインに！） */
+			.button { border-radius: 6px !important; border-color: #111111 !important; background-color: transparent !important; color: #111111 !important; font-weight: 700 !important; transition: all 0.3s ease; }
+			.button:hover { background-color: #f5f5f5 !important; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+			.button.primary { background-color: #111111 !important; color: #ffffff !important; }
+			.button.primary:hover { background-color: #333333 !important; }
+			
+			/* 背景が真っ白になっても問題ないように保険をかける設定 */
+			#bg { background: #ffffff !important; }
+			#bg:after, #bg:before { display: none !important; }
 		</style>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
 			<header id="header">
-				<div class="logo"><span class="icon fa-theater-masks"></span></div>
+				<div class="logo"><span class="icon fa-theater-masks" style="color: #111; border-color: #111;"></span></div>
 				<div class="content">
 					<div class="inner">
-						<h1>犬飼 紀香</h1>
-						<p class="name-en">Norika Inukai</p>
-						<p style="font-size: 0.85em; letter-spacing: 0.15em; color: rgba(255,255,255,0.6);">Actor / Science Performer Portfolio</p>
+						<h1 style="color: #111;">犬飼 紀香</h1>
+						<p class="name-en" style="color: #444; border-bottom-color: #ccc;">Norika Inukai</p>
+						<p style="font-size: 0.85em; letter-spacing: 0.15em; color: #333;">Actor / Science Performer Portfolio</p>
 					</div>
 				</div>
 				<nav>
-					<ul>
-						<li><a href="#intro">Profile</a></li>
-						<li><a href="#work">Data</a></li>
-						<li><a href="#about">Photos</a></li>
-						<li><a href="#contact">Contact</a></li>
+					<ul style="border-color: #ccc;">
+						<li><a href="#intro" style="color: #111;">Profile</a></li>
+						<li><a href="#work" style="color: #111;">Data</a></li>
+						<li><a href="#about" style="color: #111;">Photos</a></li>
+						<li><a href="#contact" style="color: #111;">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -104,68 +111,53 @@
 					<ul class="credit-list">
 						<li><span class="date">2026.05</span> <strong>映画【モモンガ観察日記】</strong> 女子高生 役</li>
 						<li><span class="date">2026.04</span> <strong>特許庁 IP BASE 公式YouTube インタビュアー</strong> 
-							<br><span style="font-size:0.85em; color:rgba(255,255,255,0.7);">・株式会社BiPSEE編（VRうつ病治療戦略） <a href="https://www.youtube.com/watch?v=HOBUDgynYaU" target="_blank">［動画を見る］</a></span>
-							<br><span style="font-size:0.85em; color:rgba(255,255,255,0.7);">・株式会社CuboRex編（革新的運搬技術戦略） <a href="https://youtu.be/ChsQPQ7ot8g?si=okh_Cx5mhFmOO-fX" target="_blank">［動画を見る］</a></span>
+							<br><span style="font-size:0.85em; color:#333;">・株式会社BiPSEE編（VRうつ病治療戦略） <a href="https://www.youtube.com/watch?v=HOBUDgynYaU" target="_blank">［動画を見る］</a></span>
+							<br><span style="font-size:0.85em; color:#333;">・株式会社CuboRex編（革新技術運搬戦略） <a href="https://youtu.be/ChsQPQ7ot8g?si=okh_Cx5mhFmOO-fX" target="_blank">［動画を見る］</a></span>
 						</li>
 						<li><span class="date">2026.01</span> <strong>J-WAVE「ENEOS FOR OUR EARTH -ONE BY ONE-」</strong> ゲスト出演</li>
 						<li><span class="date">2025.01</span> <strong>雑誌「ロトナンバーズビンゴ5」表紙</strong> / ロト娘特集ページ掲載</li>
-						<li><span class="date">2022.09</span> <strong>映画【タピオカ学入門】</strong> 今井 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(ひぐらし☆、早稲田大学映画研究会)</span></li>
-						<li><span class="date">2022.09</span> <strong>映画【グレーゾーン】</strong> めい 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(日本大学藝術学部放送学科卒業制作作品)</span></li>
-						<li><span class="date">2021.08</span> <strong>映画【娘娘瓦解】</strong> ゆき 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(早稲田大学映画研究会)</span></li>
-						<li><span class="date">2021.06</span> <strong>映画【ものをいう】</strong> 先輩 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(早稲田大学映画研究会)</span></li>
+						<li><span class="date">2022.09</span> <strong>映画【タピオカ学入門】</strong> 今井 役 <span style="font-size:0.85em; color:#555;">(ひぐらし☆、早稲田大学映画研究会)</span></li>
+						<li><span class="date">2022.09</span> <strong>映画【グレーゾーン】</strong> めい 役 <span style="font-size:0.85em; color:#555;">(日本大学藝術学部放送学科卒業制作作品)</span></li>
+						<li><span class="date">2021.08</span> <strong>映画【娘娘瓦解】</strong> ゆき 役 <span style="font-size:0.85em; color:#555;">(早稲田大学映画研究会)</span></li>
+						<li><span class="date">2021.06</span> <strong>映画【ものをいう】</strong> 先輩 役 <span style="font-size:0.85em; color:#555;">(早稲田大学映画研究会)</span></li>
 					</ul>
 
 					<h3 class="section-title">サイエンスショー・イベント出演実績</h3>
 					<ul class="credit-list">
-						<li><span class="date">2026.05</span> <strong>大阪市水道局「すいすいカーニバル」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：水道記念館 芝生エリア)</span></li>
-						<li><span class="date">2026.04</span> <strong>九州電力「Ｑでんファミリーフェスタ」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：九州電力 鹿児島支店)</span></li>
-						<li><span class="date">2026.03</span> <strong>「次世代エネルギーフェスティバルinのしろ」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：イオンタウン能代 / 主催：能代市)</span></li>
-						<li><span class="date">2026.03</span> <strong>「ふくしま再エネファミリーラボ2026」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：会津若松市文化センター)</span></li>
+						<li><span class="date">2026.05</span> <strong>大阪市水道局「すいすいカーニバル」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：水道記念館 芝生エリア)</span></li>
+						<li><span class="date">2026.04</span> <strong>九州電力「Ｑでんファミリーフェスタ」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：九州電力 鹿児島支店)</span></li>
+						<li><span class="date">2026.03</span> <strong>「次世代エネルギーフェスティバルinのしろ」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：イオンタウン能代 / 主催：能代市)</span></li>
+						<li><span class="date">2026.03</span> <strong>「ふくしま再エネファミリーラボ2026」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：会津若松市文化センター)</span></li>
 						<li><span class="date">2026.02</span> <strong>九州電力「Ｑでんみらいスクール」</strong> 科学実験イベント／サイエンスショー</li>
-						<li><span class="date">2025.12</span> <strong>「カーボンニュートラルフェア in かごしま」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：カイックス交流センター)</span></li>
-						<li><span class="date">2025.11</span> <strong>「まるごと かごしまフェス」</strong> ワークショップ＆サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：イオンモール鹿児島)</span></li>
-						<li><span class="date">2025.10</span> <strong>「水素チャレンジパークふくしま2025」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：テクノアカデミー浜)</span></li>
-						<li><span class="date">2025.10</span> <strong>ふくしま水素エネルギー サイエンスショー</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県産業人材育成課)</span></li>
-						<li><span class="date">2025.10</span> <strong>ボートレース若松 サイエンスショー</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(福岡県北九州市)</span></li>
-						<li><span class="date">2025.10</span> <strong>茜が丘複合施設イベント「みらフェス」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：兵庫県西脇市)</span></li>
-						<li><span class="date">2025.09</span> <strong>「下水道の日フェスティバル2025」</strong> のりのり&ひなひなサイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：東京都虹の下水道館)</span></li>
+						<li><span class="date">2025.12</span> <strong>「カーボンニュートラルフェア in かごしま」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：カイックス交流センター)</span></li>
+						<li><span class="date">2025.11</span> <strong>「まるごと かごしまフェス」</strong> ワークショップ＆サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：イオンモール鹿児島)</span></li>
+						<li><span class="date">2025.10</span> <strong>「水素チャレンジパークふくしま2025」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(会場：テクノアカデミー浜)</span></li>
+						<li><span class="date">2025.10</span> <strong>ふくしま水素エネルギー サイエンスショー</strong> / <strong>ボートレース若松 サイエンスショー</strong></li>
+						<li><span class="date">2025.10</span> <strong>茜が丘複合施設イベント「みらフェス」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(主催：兵庫県西脇市)</span></li>
+						<li><span class="date">2025.09</span> <strong>「下水道の日フェスティバル2025」</strong> のりのり&ひなひなサイエンスショー <span style="font-size:0.85em; color:#555;">(主催：東京都虹の下水道館)</span></li>
 						<li><span class="date">2025.08</span> <strong>「ワオ未来塾」オンライン サイエンスショー</strong></li>
-						<li><span class="date">2025.08</span> <strong>夏休み自由研究ワークショップ</strong> オリジナルプラネタリウムを作ろう <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：オリナス錦糸町)</span></li>
-						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> EXPOメッセ「WASSE」世界青少年発明工夫展2025 ダイキンブース内</li>
-						<li><span class="date">2025.08</span> <strong>九州電力「夏休み 親子自由研究教室」</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：センテラス天文館 / センノオト)</span></li>
-						<li><span class="date">2025.07</span> <strong>「おもしろ科学館2025inほろのべ」</strong> サイエンスキングダム <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：経済産業省北海道経済産業局、幌延町)</span></li>
+						<li><span class="date">2025.08</span> <strong>夏休み自由研究ワークショップ オリジナルプラネタリウムを作ろう</strong> <span style="font-size:0.85em; color:#555;">(主催：オリナス錦仕様)</span></li>
+						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> <span style="font-size:0.85em; color:#555;">(EXPOメッセ「WASSE」世界青少年発明工夫展 ダイキンブース内)</span></li>
+						<li><span class="date">2025.08</span> <strong>九州電力「夏休み 親子自由研究教室」</strong> <span style="font-size:0.85em; color:#555;">(会場：センテラス天文館 / センノオト)</span></li>
+						<li><span class="date">2025.07</span> <strong>「おもしろ科学館2025inほろのべ」</strong> サイエンスキングダム <span style="font-size:0.85em; color:#555;">(主催：経済産業省北海道経済産業局、幌延町)</span></li>
 						<li><span class="date">2025.07</span> <strong>「コミュタン福島ギモン★ハンター」</strong> 再生可能エネルギーや地球温暖化がわかるサイエンスショー！</li>
-						<li><span class="date">2025.03</span> <strong>「ふくしま再エネファミリーラボ2025」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県エネルギー課)</span></li>
+						<li><span class="date">2025.03</span> <strong>「ふくしま再エネファミリーラボ2025」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(主催：福島県エネルギー課)</span></li>
 					</ul>
 
 					<h3 class="section-title">その他 出演実績（広告・CM等）</h3>
-					<ul class="credit-list">
-						<li>求人検索メディア「ウィルオブ」WEB-CM</li>
-						<li>カルビー TV-CM（福原遥さん スタンドイン）</li>
-						<li>西武園ゆうえんち TV-CM</li>
-						<li>東京国際工科専門職大学 TV-CM</li>
-						<li>決済ブランド会社V社 WEB-CM</li>
-						<li>某大手学校法人 WEB-CM</li>
-						<li>HIMAWARIシャンプー CM</li>
-					</ul>
+					<p class="inline-credits">
+						求人検索メディア「ウィルオブ」WEB-CM<strong> / </strong>カルビー TV-CM（福原遥さん スタンドイン）<strong> / </strong>西武園ゆうえんち TV-CM<strong> / </strong>東京国際工科専門職大学 TV-CM<strong> / </strong>決済ブランド会社V社 WEB-CM<strong> / </strong>某大手学校法人 WEB-CM<strong> / </strong>HIMAWARIシャンプー CM
+					</p>
 
 					<h3 class="section-title">その他 出演実績（映画・ドラマ・メディア等）</h3>
-					<ul class="credit-list">
-						<li>Nissy(西島隆弘) MV</li>
-						<li>石田雄介監督 NETFLIXドラマ</li>
-						<li>Paraviドラマ「復讐の未亡人」</li>
-						<li>映画「太陽とボレロ」</li>
-						<li>映画「A3!」</li>
-						<li>井上靖雄監督映画</li>
-						<li>某ウェルス・マネジメント会社 WEBムービー</li>
-						<li>WOWOWドラマ「邪神の天秤」</li>
-						<li>テレビ東京「生きるとか死ぬとか父親とか」</li>
-					</ul>
+					<p class="inline-credits">
+						Nissy(西島隆弘) MV<strong> / </strong>石田雄介監督 NETFLIXドラマ<strong> / </strong>Paraviドラマ「復讐の未亡人」<strong> / </strong>映画「太陽とボレロ」<strong> / </strong>映画「A3!」<strong> / </strong>井上靖雄監督映画<strong> / </strong>某ウェルス・マネジメント会社 WEBムービー<strong> / </strong>WOWOWドラマ「邪神の天秤」<strong> / </strong>テレビ東京「生きるとか死ぬとか父親とか」
+					</p>
 				</article>
 
 				<article id="about">
 					<h2 class="major">Photos</h2>
-					<p style="text-align: center; color: rgba(255,255,255,0.6);">被写体・宣材写真などのギャラリーです。</p>
+					<p style="text-align: center; color: #333; margin-bottom: 2em;">被写体・宣材写真などのギャラリーです。</p>
 					<div class="photo-grid">		
 						<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
 						<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
@@ -216,7 +208,7 @@
 			</div>
 
 			<footer id="footer">
-				<p class="copyright">&copy; norikainukai. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				<p class="copyright" style="color: #666;">&copy; norikainukai. Design: <a href="https://html5up.net" style="color: #444;">HTML5 UP</a>.</p>
 			</footer>
 		</div>
 		<div id="bg"></div>
