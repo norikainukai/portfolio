@@ -86,6 +86,7 @@
 				width: 60px !important;
 			}
 
+			/* 💡 見出しの文字色を絶対に暗くさせない最強の上書き設定 */
 			h3.section-title {
 				border-left: none;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -95,7 +96,15 @@
 				margin-bottom: 20px;
 				font-size: 1.0em;
 				font-weight: 500;
-				color: #fff;
+				color: #ffffff !important;      /* 絶対に白！ */
+				opacity: 1 !important;          /* 絶対に透明にしない！ */
+			}
+
+			/* 💡 おまけ部分の説明テキストも、絶対に透明にしない白文字に設定 */
+			.force-white {
+				color: #ffffff !important;
+				opacity: 1 !important;
+				font-weight: 500 !important;
 			}
 
 			/* 🔲 ボタンのデザインを上品な細線に */
@@ -230,47 +239,4 @@
 					<h3 class="section-title">Official SNS Links</h3>
 					<ul class="actions stacked">
 						<li><a href="https://www.instagram.com/norika_inukai?igsh=MWkyMG50czQ2anJ2eg%3D%3D&utm_source=qr" class="button" target="_blank">📷 Instagram (日常アカウント)</a></li>
-						<li><a href="https://www.instagram.com/norika_picture?igsh=dHpoZDJwNmNlbTR3" class="button" target="_blank">📷 Instagram (被写体アカウント)</a></li>
-						<li><a href="https://www.tiktok.com/@kagakuotaku?_r=1&_t=ZS-91Hj0e6mgCa" class="button" target="_blank">🎵 TikTok (@kagakuotaku)</a></li>
-						<li><a href="https://www.youtube.com/channel/UCvYsROBFthmNpJ3utHUGhnw" class="button" target="_blank">📺 YouTube (@kagakuotaku)</a></li>
-					</ul>
-
-					<h3 class="section-title" style="margin-top: 50px; color: #ffffff;">Bonus（レッスン動画抜粋）</h3>
-					<p style="font-size: 0.9em; color: #ffffff; margin-bottom: 20px; text-align: center; font-weight: 500;">日頃のワークショップや演技レッスンの様子です。</p>
-					<div class="row">
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/cFLcOMqzV00" class="button small" target="_blank">📹 動画 1</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/U7cte8Vyqxg?si=LENKozkA03i0wLeh" class="button small" target="_blank">📹 動画 2</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/gIYf9oWM6R8?si=jUjNMb9b97H6_Y64" class="button small" target="_blank">📹 動画 3</a></li>
-							</ul>
-						</div>
-					</div>
-				</article>
-
-			</div>
-
-			<footer id="footer">
-				<p class="copyright">&copy; norikainukai. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
-
-		</div>
-
-		<div id="bg"></div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+						<li><a href="
