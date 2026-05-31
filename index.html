@@ -10,39 +10,39 @@
 			/* 📸 写真を劇的にかっこよく見せるスタイリッシュ・デザイン */
 			.photo-grid {
 				display: grid;
-				/* 写真を少し大きめにして、迫力のある2列〜3列の並び崩しに設定 */
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 30px;
+				/* 横幅に合わせて自動でいい感じに2列〜3列に並ぶ設定 */
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 25px;
 				margin-top: 30px;
 			}
 			.photo-item {
 				position: relative;
 				border-radius: 8px;
 				overflow: hidden;
-				/* 黒い背景を敷いて影をつけることで、写真を引き締める */
 				background: #000;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+				/* 写真の後ろに深い影をつけて引き締める */
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 				transition: transform 0.4s ease, box-shadow 0.4s ease;
 				cursor: pointer;
 			}
 			.photo-item img {
 				width: 100%;
-				height: 380px; /* 縦長で統一してスタイリッシュなポートレート風に */
+				height: 360px; /* 縦長ポートレート風にサイズを統一 */
 				display: block;
 				object-fit: cover;
-				/* 最初は少し暗めにして、映画っぽい質感にする */
+				/* 映画のフィルムっぽい少し深みのある質感 */
 				filter: brightness(0.85) contrast(1.05);
 				transition: transform 0.5s ease, filter 0.5s ease;
 			}
 			
-			/* ✨ マウスを乗せたとき（スマホで触ったとき）の、かっこいい仕掛け */
+			/* ✨ マウスを乗せたとき（スマホでタップしたとき）の浮き上がるエフェクト */
 			.photo-item:hover {
-				transform: translateY(-10px); /* 枠がふわっと上に浮き上がる */
+				transform: translateY(-8px);
 				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 			}
 			.photo-item:hover img {
-				transform: scale(1.08); /* 写真が奥からグッと迫ってくるように拡大 */
-				filter: brightness(1.0) contrast(1.1); /* 本来の鮮やかさがパッと引き立つ */
+				transform: scale(1.06); /* じわっとズーム */
+				filter: brightness(1.0) contrast(1.1); /* パッと鮮やかに */
 			}
 		</style>
 	</head>
@@ -106,7 +106,12 @@
 						<div class="photo-item"><img src="pic08.jpg.jpg" alt="写真8" /></div>
 						<div class="photo-item"><img src="pic09.jpg.jpg" alt="写真9" /></div>
 						<div class="photo-item"><img src="pic10.jpg.jpg" alt="写真10" /></div>
-						</div>
+						<div class="photo-item"><img src="pic11.jpg.jpg" alt="写真11" /></div>
+						<div class="photo-item"><img src="pic12.jpg.jpg" alt="写真12" /></div>
+						<div class="photo-item"><img src="pic13.jpg.jpg" alt="写真13" /></div>
+						<div class="photo-item"><img src="pic14.jpg.jpg" alt="写真14" /></div>
+						<div class="photo-item"><img src="pic15.jpg.jpg" alt="写真15" /></div>
+					</div>
 				</article>
 
 				<article id="contact">
