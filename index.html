@@ -27,6 +27,14 @@
 			.button:hover { background-color: rgba(255, 255, 255, 0.1) !important; border-color: #fff !important; box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
 			.button.primary { background-color: rgba(255, 255, 255, 0.9) !important; color: #111 !important; font-weight: 500; }
 			.button.primary:hover { background-color: #fff !important; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+			
+			/* 📜 出演実績リストのデザイン */
+			.credit-list { list-style: none; padding-left: 0; font-size: 0.9em; line-height: 1.8; color: #ffffff !important; opacity: 1 !important; }
+			.credit-list li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+			.credit-list span.date { color: rgba(255,255,255,0.6); font-family: 'Playfair Display', serif; margin-right: 15px; font-size: 0.95em; }
+			.credit-list a { color: #00bcd4 !important; text-decoration: none; border-bottom: 1px dashed rgba(0,188,212,0.5); transition: all 0.3s; }
+			.credit-list a:hover { color: #fff !important; border-bottom-color: #fff; }
+			
 			#bg:after { background-image: radial-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.95)), url("images/bg.jpg"); }
 			#bg:before { background-image: linear-gradient(140deg, rgba(49, 27, 146, 0.5) 10%, rgba(0, 96, 100, 0.4) 60%, rgba(13, 27, 42, 0.6) 100%); }
 		</style>
@@ -69,25 +77,84 @@
 				<article id="work">
 					<h2 class="major">Data</h2>
 					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
-					<p>各種データや出演実績の映像資料リンクです。クリックすると動画や書類が開きます。</p>
+					
 					<h3 class="section-title">プロフィール・コンポジ</h3>
 					<ul class="actions stacked">
 						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール (Googleドキュメント)</a></li>
 						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
 					</ul>
+
 					<h3 class="section-title">メイン映像資料</h3>
 					<div class="row">
 						<div class="col-6 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 お芝居映像（YouTube）</a></li>
-							</ul>
+							<ul class="actions stacked"><li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 お芝居映像（YouTube）</a></li></ul>
 						</div>
 						<div class="col-6 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 サイエンスショー（YouTube）</a></li>
-							</ul>
+							<ul class="actions stacked"><li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 サイエンスショー（YouTube）</a></li></ul>
 						</div>
 					</div>
+
+					<h3 class="section-title">主な出演作・掲載実績（映画・特許庁公式映像・雑誌等）</h3>
+					<ul class="credit-list">
+						<li><span class="date">2026.05</span> <strong>映画【モモンガ観察日記】</strong> 女子高生 役</li>
+						<li><span class="date">2026.04</span> <strong>特許庁 IP BASE 公式YouTube インタビュアー</strong> 
+							<br><span style="font-size:0.85em; color:rgba(255,255,255,0.7);">・株式会社BiPSEE編（VRうつ病治療戦略）<a href="https://www.youtube.com/watch?v=HOBUDgynYaU" target="_blank">［動画を見る］</a></span>
+							<br><span style="font-size:0.85em; color:rgba(255,255,255,0.7);">・株式会社CuboRex編（革新的運搬技術戦略）<a href="https://youtu.be/ChsQPQ7ot8g?si=okh_Cx5mhFmOO-fX" target="_blank">［動画を見る］</a></span>
+						</li>
+						<li><span class="date">2025.01</span> <strong>雑誌「ロトナンバーズビンゴ5」表紙</strong> / ロト娘特集ページ掲載</li>
+						<li><span class="date">2022.09</span> <strong>映画【タピオカ学入門】</strong> 今井 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(ひぐらし☆、早稲田大学映画研究会)</span></li>
+						<li><span class="date">2022.09</span> <strong>映画【グレーゾーン】</strong> めい 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(日本大学藝術学部放送学科卒業制作作品)</span></li>
+						<li><span class="date">2021.08</span> <strong>映画【娘娘瓦解】</strong> ゆき 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(早稲田大学映画研究会)</span></li>
+						<li><span class="date">2021.06</span> <strong>映画【ものをいう】</strong> 先輩 役 <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(早稲田大学映画研究会)</span></li>
+					</ul>
+
+					<h3 class="section-title">サイエンスショー・イベント出演実績</h3>
+					<ul class="credit-list" style="font-size: 0.88em;">
+						<li><span class="date">2026.03</span> <strong>「次世代エネルギーフェスティバルinのしろ」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(会場：イオンタウン能代 / 主催：能代市)</span></li>
+						<li><span class="date">2026.03</span> <strong>「ふくしま再エネファミリーラボ2026」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県エネルギー課)</span></li>
+						<li><span class="date">2026.02</span> <strong>Ｑでんみらいスクール</strong> 九電科学実験イベント／サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：九州電力)</span></li>
+						<li><span class="date">2025.12</span> <strong>カーボンニュートラルフェア in かごしま</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(鹿児島県鹿児島市)</span></li>
+						<li><span class="date">2025.11</span> <strong>かごしままるごとフェス</strong> ワークショップ／サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(鹿児島県南さつま市)</span></li>
+						<li><span class="date">2025.10</span> <strong>ふくしま水素エネルギー サイエンスショー</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県産業人材育成課)</span></li>
+						<li><span class="date">2025.10</span> <strong>ボートレース若松 サイエンスショー</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(福岡県北九州市)</span></li>
+						<li><span class="date">2025.10</span> <strong>茜が丘複合施設イベント「みらフェス」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：兵庫県西脇市)</span></li>
+						<li><span class="date">2025.09</span> <strong>下水道の日フェスティバル2025</strong> のりのり&ひなひなサイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：東京都虹の下水道館)</span></li>
+						<li><span class="date">2025.08</span> <strong>夏休み自由研究ワークショップ</strong> オリジナルプラネタリウムを作ろう <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：オリナス錦糸町)</span></li>
+						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> EXPOメッセ「WASSE」世界青少年発明工夫展2025 ダイキンブース内</li>
+						<li><span class="date">2025.08</span> <strong>夏休み 親子自由研究教室</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：九州電力)</span></li>
+						<li><span class="date">2025.07</span> <strong>おもしろ科学館2025inほろのべ</strong> サイエンスキングダム <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：経済産業省北海道経済産業局、幌延町)</span></li>
+						<li><span class="date">2025.07</span> <strong>再生可能エネルギーや地球温暖化がわかるサイエンスショー！</strong> <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県環境創造センター)</span></li>
+						<li><span class="date">2025.03</span> <strong>「ふくしま再エネファミリーラボ2025」</strong> サイエンスショー <span style="font-size:0.85em; color:rgba(255,255,255,0.6);">(主催：福島県エネルギー課)</span></li>
+					</ul>
+
+					<h3 class="section-title">ラジオ出演実績</h3>
+					<ul class="credit-list">
+						<li><span class="date">2026.01</span> <strong>J-WAVE「ENEOS FOR OUR EARTH -ONE BY ONE-」</strong> ゲスト出演</li>
+					</ul>
+
+					<h3 class="section-title">その他 出演実績（広告・CM等）</h3>
+					<ul class="credit-list" style="font-size: 0.85em; color: rgba(255,255,255,0.8) !important;">
+						<li>求人検索メディア「ウィルオブ」WEB-CM</li>
+						<li>カルビー TV-CM（福原遥さん スタンドイン）</li>
+						<li>西武園ゆうえんち TV-CM</li>
+						<li>東京国際工科専門職大学 TV-CM</li>
+						<li>決済ブランド会社V社 WEB-CM</li>
+						<li>某大手学校法人 WEB-CM</li>
+						<li>HIMAWARIシャンプー CM</li>
+					</ul>
+
+					<h3 class="section-title">その他 出演実績（映画・ドラマ・メディア等）</h3>
+					<ul class="credit-list" style="font-size: 0.85em; color: rgba(255,255,255,0.8) !important;">
+						<li>Nissy(西島隆弘) MV</li>
+						<li>石田雄介監督 NETFLIXドラマ</li>
+						<li>Paraviドラマ「復讐の未亡人」</li>
+						<li>映画「太陽とボレロ」</li>
+						<li>映画「A3!」</li>
+						<li>井上靖雄監督映画</li>
+						<li>某ウェルス・マネジメント会社 WEBムービー</li>
+						<li>WOWOWドラマ「邪神の天秤」</li>
+						<li>テレビ東京「生きるとか死ぬとか父親とか」</li>
+					</ul>
 				</article>
 
 				<article id="about">
@@ -112,7 +179,7 @@
 
 				<article id="contact">
 					<h2 class="major">Contact</h2>
-					<p>お仕事のご依頼・お問い合わせは、下記メールアドレス、またはInstagramのDMへお願いいたします。</p>
+					<p>お仕事のご依頼・お問い合わせは、下記メールアドレス、またはInstagram of DMへお願いいたします。</p>
 					<ul class="actions stacked">
 						<li><a href="mailto:acterwoman917vo@gmail.com" class="button primary">✉ acterwoman917vo@gmail.com</a></li>
 					</ul>
