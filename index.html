@@ -7,22 +7,42 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* 写真10枚を綺麗に並べるための専用デザイン */
+			/* 📸 写真を劇的にかっこよく見せるスタイリッシュ・デザイン */
 			.photo-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-				gap: 20px;
-				margin-top: 20px;
+				/* 写真を少し大きめにして、迫力のある2列〜3列の並び崩しに設定 */
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 30px;
+				margin-top: 30px;
 			}
 			.photo-item {
-				border-radius: 4px;
+				position: relative;
+				border-radius: 8px;
 				overflow: hidden;
+				/* 黒い背景を敷いて影をつけることで、写真を引き締める */
+				background: #000;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+				transition: transform 0.4s ease, box-shadow 0.4s ease;
+				cursor: pointer;
 			}
 			.photo-item img {
 				width: 100%;
-				height: auto;
+				height: 380px; /* 縦長で統一してスタイリッシュなポートレート風に */
 				display: block;
 				object-fit: cover;
+				/* 最初は少し暗めにして、映画っぽい質感にする */
+				filter: brightness(0.85) contrast(1.05);
+				transition: transform 0.5s ease, filter 0.5s ease;
+			}
+			
+			/* ✨ マウスを乗せたとき（スマホで触ったとき）の、かっこいい仕掛け */
+			.photo-item:hover {
+				transform: translateY(-10px); /* 枠がふわっと上に浮き上がる */
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+			}
+			.photo-item:hover img {
+				transform: scale(1.08); /* 写真が奥からグッと迫ってくるように拡大 */
+				filter: brightness(1.0) contrast(1.1); /* 本来の鮮やかさがパッと引き立つ */
 			}
 		</style>
 	</head>
@@ -30,89 +50,89 @@
 
 		<div id="wrapper">
 
-				<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>犬飼 紀香</h1>
-								<p style="font-size: 0.9em; letter-spacing: 0.1em; margin-top: -1em; margin-bottom: 1.5em;">Norika Inukai</p>
-								<p>Actor / Science Performer Portfolio</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Profile</a></li>
-								<li><a href="#work">Data</a></li>
-								<li><a href="#about">Photos</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
-
-				<div id="main">
-
-						<article id="intro">
-								<h2 class="major">Profile</h2>
-								<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
-								<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
-								<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
-							</article>
-
-						<article id="work">
-								<h2 class="major">Data</h2>
-								<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
-								<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
-								
-								<ul class="actions stacked">
-									<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール(Googleドキュメント)</a></li>
-									<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
-									<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 出演動画：お芝居（YouTube）</a></li>
-									<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 出演動画：サイエンスショー（YouTube）</a></li>
-								</ul>
-							</article>
-
-						<article id="about">
-								<h2 class="major">Photos</h2>
-								<p>被写体・宣材写真などのギャラリーです。</p>
-								
-								<div class="photo-grid">		
-									<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
-									<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
-									<div class="photo-item"><img src="pic05.jpg.jpg" alt="写真5" /></div>
-									<div class="photo-item"><img src="pic06.jpg.jpg" alt="写真6" /></div>
-									<div class="photo-item"><img src="pic07.jpg.jpg" alt="写真7" /></div>
-									<div class="photo-item"><img src="pic08.jpg.jpg" alt="写真8" /></div>
-									<div class="photo-item"><img src="pic09.jpg.jpg" alt="写真9" /></div>
-									<div class="photo-item"><img src="pic10.jpg.jpg" alt="写真10" /></div>
-								</div>
-							</article>
-
-						<article id="contact">
-								<h2 class="major">Contact</h2>
-								<p>お仕事のご依頼・お問い合わせは、SNSからご連絡ください。</p>
-								<ul class="icons">
-									<li><a href="https://x.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://instagram.com/norika_inukai" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								</ul>
-							</article>
-
+			<header id="header">
+				<div class="logo">
+					<span class="icon fa-gem"></span>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>犬飼 紀香</h1>
+						<p style="font-size: 0.9em; letter-spacing: 0.1em; margin-top: -1em; margin-bottom: 1.5em;">Norika Inukai</p>
+						<p>Actor / Science Performer Portfolio</p>
 					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#intro">Profile</a></li>
+						<li><a href="#work">Data</a></li>
+						<li><a href="#about">Photos</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
 
-				<footer id="footer">
-						<p class="copyright">&copy; norikainukai. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+			<div id="main">
+
+				<article id="intro">
+					<h2 class="major">Profile</h2>
+					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
+					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
+					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
+				</article>
+
+				<article id="work">
+					<h2 class="major">Data</h2>
+					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
+					<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
+					
+					<ul class="actions stacked">
+						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール(Googleドキュメント)</a></li>
+						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
+						<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 出演動画：お芝居（YouTube）</a></li>
+						<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 出演動画：サイエンスショー（YouTube）</a></li>
+					</ul>
+				</article>
+
+				<article id="about">
+					<h2 class="major">Photos</h2>
+					<p>被写体・宣材写真などのギャラリーです。</p>
+					
+					<div class="photo-grid">		
+						<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
+						<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
+						<div class="photo-item"><img src="pic05.jpg.jpg" alt="写真5" /></div>
+						<div class="photo-item"><img src="pic06.jpg.jpg" alt="写真6" /></div>
+						<div class="photo-item"><img src="pic07.jpg.jpg" alt="写真7" /></div>
+						<div class="photo-item"><img src="pic08.jpg.jpg" alt="写真8" /></div>
+						<div class="photo-item"><img src="pic09.jpg.jpg" alt="写真9" /></div>
+						<div class="photo-item"><img src="pic10.jpg.jpg" alt="写真10" /></div>
+						</div>
+				</article>
+
+				<article id="contact">
+					<h2 class="major">Contact</h2>
+					<p>お仕事のご依頼・お問い合わせは、SNSからご連絡ください。</p>
+					<ul class="icons">
+						<li><a href="https://x.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://instagram.com/norika_inukai" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+				</article>
 
 			</div>
+
+			<footer id="footer">
+				<p class="copyright">&copy; norikainukai. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+
+		</div>
 
 		<div id="bg"></div>
 
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
