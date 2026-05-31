@@ -12,7 +12,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 		<style>
-			/* 🖤 全体を大人っぽく洗練された洗練空間にするスタイリング */
+			/* 🖤 全体を大人っぽく洗練された空間にするスタイリング */
 			body, input, select, textarea, button, .button {
 				font-family: 'Noto Serif JP', serif !important;
 				font-weight: 300;
@@ -40,7 +40,7 @@
 				margin-bottom: 1.5em;
 			}
 
-			/* 📸 写真ギャラリーのデザインをさらに高級に */
+			/* 📸 写真ギャラリーのデザイン（頭が切れないように超絶調整！） */
 			.photo-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -60,7 +60,9 @@
 				width: 100%;
 				height: 380px;
 				display: block;
+				/* 💡 写真の「上基準」で合わせることで、縦長写真でも頭が絶対に切れないようにしました！ */
 				object-fit: cover;
+				object-position: top center;
 				filter: brightness(0.8) contrast(1.02);
 				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
 			}
@@ -192,13 +194,6 @@
 							</ul>
 						</div>
 					</div>
-
-					<h3 class="section-title">出演作品（切り抜き・映像）</h3>
-					<ul class="actions stacked">
-						<li><a href="https://youtu.be/COPW76cgVrc" class="button" target="_blank">🎥 タピオカ学入門 切り抜き</a></li>
-						<li><a href="https://youtu.be/w0DP5hYVMQY?si=CCXl3iHw8HL0UErr" class="button" target="_blank">🎥 それぞれの青</a></li>
-						<li><a href="https://www.youtube.com/watch?v=QAZ_SAaOEmo" class="button" target="_blank">🎥 娘娘瓦解（ニャンニャンウヮジィエー）</a></li>
-					</ul>
 				</article>
 
 				<article id="about">
@@ -240,8 +235,8 @@
 						<li><a href="https://www.youtube.com/channel/UCvYsROBFthmNpJ3utHUGhnw" class="button" target="_blank">📺 YouTube (@kagakuotaku)</a></li>
 					</ul>
 
-					<h3 class="section-title" style="margin-top: 50px; color: rgba(255,255,255,0.4);">Bonus（レッスン動画抜粋）</h3>
-					<p style="font-size: 0.85em; color: rgba(255,255,255,0.5); margin-bottom: 20px; text-align: center;">日頃のワークショップや演技レッスンの様子です。</p>
+					<h3 class="section-title" style="margin-top: 50px; color: #ffffff;">Bonus（レッスン動画抜粋）</h3>
+					<p style="font-size: 0.9em; color: #ffffff; margin-bottom: 20px; text-align: center; font-weight: 500;">日頃のワークショップや演技レッスンの様子です。</p>
 					<div class="row">
 						<div class="col-4 col-12-small">
 							<ul class="actions stacked">
