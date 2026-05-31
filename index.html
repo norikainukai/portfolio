@@ -10,7 +10,6 @@
 			/* 📸 写真を劇的にかっこよく見せるスタイリッシュ・デザイン */
 			.photo-grid {
 				display: grid;
-				/* 横幅に合わせて自動でいい感じに2列〜3列に並ぶ設定 */
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 				gap: 25px;
 				margin-top: 30px;
@@ -20,29 +19,34 @@
 				border-radius: 8px;
 				overflow: hidden;
 				background: #000;
-				/* 写真の後ろに深い影をつけて引き締める */
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 				transition: transform 0.4s ease, box-shadow 0.4s ease;
 				cursor: pointer;
 			}
 			.photo-item img {
 				width: 100%;
-				height: 360px; /* 縦長ポートレート風にサイズを統一 */
+				height: 360px;
 				display: block;
 				object-fit: cover;
-				/* 映画のフィルムっぽい少し深みのある質感 */
 				filter: brightness(0.85) contrast(1.05);
 				transition: transform 0.5s ease, filter 0.5s ease;
 			}
-			
-			/* ✨ マウスを乗せたとき（スマホでタップしたとき）の浮き上がるエフェクト */
 			.photo-item:hover {
 				transform: translateY(-8px);
 				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 			}
 			.photo-item:hover img {
-				transform: scale(1.06); /* じわっとズーム */
-				filter: brightness(1.0) contrast(1.1); /* パッと鮮やかに */
+				transform: scale(1.06);
+				filter: brightness(1.0) contrast(1.1);
+			}
+			/* 資料ごとの見出し用デザイン */
+			h3.section-title {
+				border-left: 4px solid #ffffff;
+				padding-left: 10px;
+				margin-top: 30px;
+				margin-bottom: 15px;
+				font-size: 1.1em;
+				letter-spacing: 0.1em;
 			}
 		</style>
 	</head>
@@ -78,25 +82,70 @@
 					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
+					
+					<h3 class="section-title">所属・提携</h3>
+					<ul class="actions stacked">
+						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" class="button" target="_blank">🏢 所属事務所：カレーラ</a></li>
+						<li><a href="https://agency.wao.ne.jp/talent/t_023.html" class="button" target="_blank">🤝 業務提携：ワオエージェンシー</a></li>
+						<li><a href="https://agency.wao.ne.jp/talent/t_025.html" class="button" target="_blank">👭 のりのり＆ひなひな</a></li>
+					</ul>
 				</article>
 
 				<article id="work">
 					<h2 class="major">Data</h2>
 					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
-					<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
+					<p>各種データや出演実績の映像資料リンクです。クリックすると動画や書類が開きます。</p>
 					
+					<h3 class="section-title">プロフィール・コンポジ</h3>
 					<ul class="actions stacked">
-						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール(Googleドキュメント)</a></li>
+						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール (Googleドキュメント)</a></li>
 						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
-						<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 出演動画：お芝居（YouTube）</a></li>
-						<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 出演動画：サイエンスショー（YouTube）</a></li>
 					</ul>
+
+					<h3 class="section-title">メイン映像資料</h3>
+					<div class="row">
+						<div class="col-6 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 お芝居映像（YouTube）</a></li>
+							</ul>
+						</div>
+						<div class="col-6 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 サイエンスショー（YouTube）</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<h3 class="section-title">出演作品（切り抜き・映像）</h3>
+					<ul class="actions stacked">
+						<li><a href="https://youtu.be/COPW76cgVrc" class="button" target="_blank">🎥 タピオカ学入門 切り抜き</a></li>
+						<li><a href="https://youtu.be/w0DP5hYVMQY?si=CCXl3iHw8HL0UErr" class="button" target="_blank">🎥 それぞれの青</a></li>
+						<li><a href="https://www.youtube.com/watch?v=QAZ_SAaOEmo" class="button" target="_blank">🎥 娘娘瓦解（ニャンニャンウヮジィエー）</a></li>
+					</ul>
+
+					<h3 class="section-title">レッスン動画抜粋</h3>
+					<div class="row">
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/cFLcOMqzV00" class="button" target="_blank">📹 レッスン動画 1</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/U7cte8Vyqxg?si=LENKozkA03i0wLeh" class="button" target="_blank">📹 レッスン動画 2</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/gIYf9oWM6R8?si=jUjNMb9b97H6_Y64" class="button" target="_blank">📹 レッスン動画 3</a></li>
+							</ul>
+						</div>
+					</div>
 				</article>
 
 				<article id="about">
 					<h2 class="major">Photos</h2>
 					<p>被写体・宣材写真などのギャラリーです。</p>
-					
 					<div class="photo-grid">		
 						<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
 						<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
@@ -116,10 +165,20 @@
 
 				<article id="contact">
 					<h2 class="major">Contact</h2>
-					<p>お仕事のご依頼・お問い合わせは、SNSからご連絡ください。</p>
-					<ul class="icons">
-						<li><a href="https://x.com" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://instagram.com/norika_inukai" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<p>お仕事のご依頼・お問い合わせは、下記メールアドレス、またはInstagramのDMへお願いいたします。</p>
+					
+					<ul class="actions stacked">
+						<li><a href="mailto:acterwoman917vo@gmail.com" class="button primary">✉ acterwoman917vo@gmail.com</a></li>
+					</ul>
+					
+					<p style="margin-top: 20px;">または、Instagramの <strong>@norika_inukai</strong> のDMへお願いいたします。</p>
+					
+					<h3 class="section-title">Official SNS Links</h3>
+					<ul class="actions stacked">
+						<li><a href="https://www.instagram.com/norika_inukai?igsh=MWkyMG50czQ2anJ2eg%3D%3D&utm_source=qr" class="button" target="_blank">📷 Instagram (日常アカウント @norika_inukai)</a></li>
+						<li><a href="https://www.instagram.com/norika_picture?igsh=dHpoZDJwNmNlbTR3" class="button" target="_blank">📷 Instagram (被写体アカウント @norika_picture)</a></li>
+						<li><a href="https://www.tiktok.com/@kagakuotaku?_r=1&_t=ZS-91Hj0e6mgCa" class="button" target="_blank">🎵 TikTok (@kagakuotaku)</a></li>
+						<li><a href="https://www.youtube.com/channel/UCvYsROBFthmNpJ3utHUGhnw" class="button" target="_blank">📺 YouTube (@kagakuotaku)</a></li>
 					</ul>
 				</article>
 
