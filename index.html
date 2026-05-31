@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* 今後写真が何枚に増えても自動で綺麗に並べるための魔法のデザイン */
+			/* 写真10枚を綺麗に並べるための専用デザイン */
 			.photo-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -55,14 +55,14 @@
 
 						<article id="intro">
 								<h2 class="major">Profile</h2>
-								<span class="image main"><img src="photo01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
+								<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 								<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 								<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 							</article>
 
 						<article id="work">
 								<h2 class="major">Data</h2>
-								<span class="image main"><img src="photo02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
+								<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
 								<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
 								
 								<ul class="actions stacked">
@@ -77,8 +77,18 @@
 								<h2 class="major">Photos</h2>
 								<p>被写体・宣材写真などのギャラリーです。</p>
 								
-								<div class="photo-grid" id="gallery-container">
-									</div>
+								<div class="photo-grid">
+									<div class="photo-item"><img src="pic01.jpg.jpg" alt="写真1" /></div>
+									<div class="photo-item"><img src="pic02.jpg.jpg" alt="写真2" /></div>
+									<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
+									<div class="photo-item"><img src="pic04.jpg.jpg" alt="写真4" /></div>
+									<div class="photo-item"><img src="pic05.jpg.jpg" alt="写真5" /></div>
+									<div class="photo-item"><img src="pic06.jpg.jpg" alt="写真6" /></div>
+									<div class="photo-item"><img src="pic07.jpg.jpg" alt="写真7" /></div>
+									<div class="photo-item"><img src="pic08.jpg.jpg" alt="写真8" /></div>
+									<div class="photo-item"><img src="pic09.jpg.jpg" alt="写真9" /></div>
+									<div class="photo-item"><img src="pic10.jpg.jpg" alt="写真10" /></div>
+								</div>
 							</article>
 
 						<article id="contact">
@@ -105,27 +115,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-		<script>
-			const container = document.getElementById('gallery-container');
-			const maxPhotos = 100;
-			
-			for (let i = 1; i <= maxPhotos; i++) {
-				const photoNum = String(i).padStart(2, '0');
-				// ここを .jpg.jpg に改造しました！
-				const imgUrl = `photo${photoNum}.jpg.jpg`;
-				
-				const img = new Image();
-				img.src = imgUrl;
-				img.onload = function() {
-					const item = document.createElement('div');
-					item.className = 'photo-item';
-					item.style.order = i;
-					item.appendChild(img);
-					container.appendChild(item);
-				};
-			}
-		</script>
 
 	</body>
 </html>
