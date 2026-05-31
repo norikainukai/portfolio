@@ -6,8 +6,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
 		<style>
-			/* 📸 写真を劇的にかっこよく見せるスタイリッシュ・デザイン */
+			/* 🖤 全体を大人っぽく洗練された洗練空間にするスタイリング */
+			body, input, select, textarea, button, .button {
+				font-family: 'Noto Serif JP', serif !important;
+				font-weight: 300;
+				letter-spacing: 0.12em; /* 文字の間隔を広げておしゃれに */
+			}
+
+			h1, h2, h3, h4, p.name-en {
+				font-family: 'Playfair Display', 'Noto Serif JP', serif !important;
+				letter-spacing: 0.2em !important;
+				text-transform: none !important; /* アルファベットの大文字強制を解除 */
+			}
+
+			/* 🎭 トップのメイン文字デザイン */
+			#header h1 {
+				font-size: 2.5em;
+				font-weight: 500;
+				margin-bottom: 0.2em;
+			}
+			#header p.name-en {
+				font-size: 0.85em;
+				font-style: italic;
+				color: rgba(255, 255, 255, 0.7);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				padding-bottom: 1.5em;
+				margin-bottom: 1.5em;
+			}
+
+			/* 📸 写真ギャラリーのデザインをさらに高級に */
 			.photo-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -16,44 +49,81 @@
 			}
 			.photo-item {
 				position: relative;
-				border-radius: 8px;
+				border-radius: 12px; /* 少し角を丸めてモダンに */
 				overflow: hidden;
-				background: #1c1c1c;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-				transition: transform 0.4s ease, box-shadow 0.4s ease;
+				background: #111;
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+				transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
 				cursor: pointer;
 			}
 			.photo-item img {
 				width: 100%;
-				height: 360px;
+				height: 380px;
 				display: block;
 				object-fit: cover;
-				filter: brightness(0.85) contrast(1.05);
-				transition: transform 0.5s ease, filter 0.5s ease;
+				filter: brightness(0.8) contrast(1.02);
+				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
 			}
 			.photo-item:hover {
-				transform: translateY(-8px);
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+				transform: translateY(-10px);
+				box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
 			}
 			.photo-item:hover img {
-				transform: scale(1.06);
-				filter: brightness(1.0) contrast(1.1);
-			}
-			h3.section-title {
-				border-left: 4px solid #ffffff;
-				padding-left: 10px;
-				margin-top: 30px;
-				margin-bottom: 15px;
-				font-size: 1.1em;
-				letter-spacing: 0.1em;
+				transform: scale(1.05);
+				filter: brightness(0.95) contrast(1.05);
 			}
 
-			/* 🎨 背景をサイバー・ディープパープル＆ブルーに染める魔法 */
+			/* 📂 各ページの見出し（中央に寄せて舞台のタイトルのように） */
+			h2.major {
+				text-align: center !important;
+				margin-bottom: 2em !important;
+			}
+			h2.major:after {
+				left: 50% !important;
+				transform: translateX(-50%);
+				width: 60px !important;
+			}
+
+			h3.section-title {
+				border-left: none;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+				padding-bottom: 5px;
+				padding-left: 0;
+				margin-top: 40px;
+				margin-bottom: 20px;
+				font-size: 1.0em;
+				font-weight: 500;
+				color: #fff;
+			}
+
+			/* 🔲 ボタンのデザインを上品な細線に */
+			.button {
+				border-radius: 6px !important;
+				border-color: rgba(255, 255, 255, 0.3) !important;
+				background-color: rgba(255, 255, 255, 0.02) !important;
+				transition: all 0.3s ease;
+			}
+			.button:hover {
+				background-color: rgba(255, 255, 255, 0.1) !important;
+				border-color: #fff !important;
+				box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+			}
+			.button.primary {
+				background-color: rgba(255, 255, 255, 0.9) !important;
+				color: #111 !important;
+				font-weight: 500;
+			}
+			.button.primary:hover {
+				background-color: #fff !important;
+				box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+			}
+
+			/* 🎨 背景を美しい「ミステリアス・ナイトパープル＆シアン」に変える魔法 */
 			#bg:after {
-				background-image: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url("images/bg.jpg");
+				background-image: radial-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.95)), url("images/bg.jpg");
 			}
 			#bg:before {
-				background-image: linear-gradient(135deg, rgba(81, 45, 168, 0.4) 0%, rgba(0, 188, 212, 0.3) 100%);
+				background-image: linear-gradient(140deg, rgba(49, 27, 146, 0.5) 10%, rgba(0, 96, 100, 0.4) 60%, rgba(13, 27, 42, 0.6) 100%);
 			}
 		</style>
 	</head>
@@ -68,8 +138,8 @@
 				<div class="content">
 					<div class="inner">
 						<h1>犬飼 紀香</h1>
-						<p style="font-size: 0.9em; letter-spacing: 0.1em; margin-top: -1em; margin-bottom: 1.5em;">Norika Inukai</p>
-						<p>Actor / Science Performer Portfolio</p>
+						<p class="name-en">Norika Inukai</p>
+						<p style="font-size: 0.85em; letter-spacing: 0.15em; color: rgba(255,255,255,0.6);">Actor / Science Performer Portfolio</p>
 					</div>
 				</div>
 				<nav>
@@ -129,30 +199,11 @@
 						<li><a href="https://youtu.be/w0DP5hYVMQY?si=CCXl3iHw8HL0UErr" class="button" target="_blank">🎥 それぞれの青</a></li>
 						<li><a href="https://www.youtube.com/watch?v=QAZ_SAaOEmo" class="button" target="_blank">🎥 娘娘瓦解（ニャンニャンウヮジィエー）</a></li>
 					</ul>
-
-					<h3 class="section-title">レッスン動画抜粋</h3>
-					<div class="row">
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/cFLcOMqzV00" class="button" target="_blank">📹 レッスン動画 1</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/U7cte8Vyqxg?si=LENKozkA03i0wLeh" class="button" target="_blank">📹 レッスン動画 2</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/gIYf9oWM6R8?si=jUjNMb9b97H6_Y64" class="button" target="_blank">📹 レッスン動画 3</a></li>
-							</ul>
-						</div>
-					</div>
 				</article>
 
 				<article id="about">
 					<h2 class="major">Photos</h2>
-					<p>被写体・宣材写真などのギャラリーです。</p>
+					<p style="text-align: center; color: rgba(255,255,255,0.6);">被写体・宣材写真などのギャラリーです。</p>
 					
 					<div class="photo-grid">		
 						<div class="photo-item"><img src="pic03.jpg.jpg" alt="写真3" /></div>
@@ -179,15 +230,35 @@
 						<li><a href="mailto:acterwoman917vo@gmail.com" class="button primary">✉ acterwoman917vo@gmail.com</a></li>
 					</ul>
 					
-					<p style="margin-top: 20px;">または、Instagramの <strong>@norika_inukai</strong> のDMへお願いいたします。</p>
+					<p style="margin-top: 20px; text-align: center;">または、Instagramの <strong>@norika_inukai</strong> のDMへお願いいたします。</p>
 					
 					<h3 class="section-title">Official SNS Links</h3>
 					<ul class="actions stacked">
-						<li><a href="https://www.instagram.com/norika_inukai?igsh=MWkyMG50czQ2anJ2eg%3D%3D&utm_source=qr" class="button" target="_blank">📷 Instagram (日常アカウント @norika_inukai)</a></li>
-						<li><a href="https://www.instagram.com/norika_picture?igsh=dHpoZDJwNmNlbTR3" class="button" target="_blank">📷 Instagram (被写体アカウント @norika_picture)</a></li>
+						<li><a href="https://www.instagram.com/norika_inukai?igsh=MWkyMG50czQ2anJ2eg%3D%3D&utm_source=qr" class="button" target="_blank">📷 Instagram (日常アカウント)</a></li>
+						<li><a href="https://www.instagram.com/norika_picture?igsh=dHpoZDJwNmNlbTR3" class="button" target="_blank">📷 Instagram (被写体アカウント)</a></li>
 						<li><a href="https://www.tiktok.com/@kagakuotaku?_r=1&_t=ZS-91Hj0e6mgCa" class="button" target="_blank">🎵 TikTok (@kagakuotaku)</a></li>
 						<li><a href="https://www.youtube.com/channel/UCvYsROBFthmNpJ3utHUGhnw" class="button" target="_blank">📺 YouTube (@kagakuotaku)</a></li>
 					</ul>
+
+					<h3 class="section-title" style="margin-top: 50px; color: rgba(255,255,255,0.4);">Bonus（レッスン動画抜粋）</h3>
+					<p style="font-size: 0.85em; color: rgba(255,255,255,0.5); margin-bottom: 20px; text-align: center;">日頃のワークショップや演技レッスンの様子です。</p>
+					<div class="row">
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/cFLcOMqzV00" class="button small" target="_blank">📹 動画 1</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/U7cte8Vyqxg?si=LENKozkA03i0wLeh" class="button small" target="_blank">📹 動画 2</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/gIYf9oWM6R8?si=jUjNMb9b97H6_Y64" class="button small" target="_blank">📹 動画 3</a></li>
+							</ul>
+						</div>
+					</div>
 				</article>
 
 			</div>
