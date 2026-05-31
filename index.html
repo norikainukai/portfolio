@@ -55,14 +55,14 @@
 
 						<article id="intro">
 								<h2 class="major">Profile</h2>
-								<span class="image main"><img src="photo01.jpg" alt="犬飼紀香 宣材写真" /></span>
+								<span class="image main"><img src="photo01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 								<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 								<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 							</article>
 
 						<article id="work">
 								<h2 class="major">Data</h2>
-								<span class="image main"><img src="photo02.jpg" alt="犬飼紀香 宣材写真全身" /></span>
+								<span class="image main"><img src="photo02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
 								<p>各種データ・出演実績のリンクです。クリックすると開きます。</p>
 								
 								<ul class="actions stacked">
@@ -108,19 +108,19 @@
 
 		<script>
 			const container = document.getElementById('gallery-container');
-			const maxPhotos = 100; // 最大100枚まで勝手に検知します
+			const maxPhotos = 100;
 			
 			for (let i = 1; i <= maxPhotos; i++) {
-				// 1桁の数字（1〜9）の場合は前に「0」をつけて「01, 02」にする
 				const photoNum = String(i).padStart(2, '0');
-				const imgUrl = `photo${photoNum}.jpg`;
+				// ここを .jpg.jpg に改造しました！
+				const imgUrl = `photo${photoNum}.jpg.jpg`;
 				
 				const img = new Image();
 				img.src = imgUrl;
 				img.onload = function() {
 					const item = document.createElement('div');
 					item.className = 'photo-item';
-					item.style.order = i; // 数字の順番通りに並べる
+					item.style.order = i;
 					item.appendChild(img);
 					container.appendChild(item);
 				};
