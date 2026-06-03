@@ -15,20 +15,26 @@
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2 family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&swap" rel="stylesheet">
 		<style>
 			/* 🌐 基本フォントと最強の見やすさ設定 */
 			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.08em; }
 			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.15em !important; text-transform: none !important; }
 			
-			/* 💻 パソコン全画面の時の自動拡大・ズーム崩れ防止 */
+			/* 💻 パソコン全画面の時の自動拡大・ワイド化（違和感の完全解消） */
 			@media screen and (min-width: 1280px) {
-				body { font-size: 17px !important; } /* 基準文字サイズをさらに大きく見やすく */
-				#main article { padding: 55px 50px !important; }
-				h2.major { font-size: 2.2em !important; }
-				.credit-list { font-size: 1.05em !important; }
-				#wrapper { max-width: 100% !important; box-sizing: border-box !important; }
-				#main { max-width: 750px !important; margin: 0 auto !important; width: 100% !important; }
+				body { font-size: 16px !important; } 
+				#main article { padding: 50px 45px !important; }
+				h2.major { font-size: 2em !important; }
+				.credit-list { font-size: 1em !important; }
+				
+				/* 🛠 白い箱の横幅を本来のワイドで高級感のある幅に解放（縦長感をなくす） */
+				#main { max-width: 100% !important; width: 100% !important; }
+				#main article { max-width: 100% !important; width: 100% !important; }
+				
+				/* 🧭 ボタンのナビゲーションだけ中央に品よくまとめる */
+				#header nav ul { max-width: 600px !important; width: 100% !important; margin: 0 auto !important; }
+				#header nav ul li a { width: 110px !important; }
 			}
 
 			/* 🏢 ヘッダー全体の余白調整 */
@@ -83,7 +89,7 @@
 			#header nav ul li a:hover { background-color: #111111 !important; color: #ffffff !important; }
 
 			/* 📄 記事エリアの装飾 */
-			article { background-color: #ffffff !important; padding: 40px 30px !important; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 1px solid #ddd; width: 100% !important; box-sizing: border-box !important; }
+			article { background-color: #ffffff !important; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 1px solid #ddd; box-sizing: border-box !important; }
 			h2.major { text-align: center !important; margin-bottom: 1.5em !important; color: #111111 !important; }
 			h2.major:after { left: 50% !important; transform: translateX(-50%); width: 60px !important; border-bottom-color: #111111 !important; }
 			h3.section-title { border-left: none; border-bottom: 2px solid #111111; padding-bottom: 5px; margin-top: 35px; margin-bottom: 20px; font-size: 1.05em; font-weight: 700; color: #111111 !important; }
@@ -357,7 +363,7 @@
 						<li><span class="date">2026.05</span><div class="credit-text"><span class="nobreak-title"><strong>映画【モモンガ観察日記】</strong> 女子高生 役</span></div></li>
 						<li><span class="date">2026.04</span><div class="credit-text"><span class="nobreak-title"><strong>特許庁 IP BASE 公式YouTube インタビュアー</strong></span><br><span style="font-size:0.85em; color:#555;">・株式会社BiPSEE編 <a href="https://www.youtube.com/watch?v=HOBUDgynYaU" target="_blank">［動画を見る］</a> ／ ・株式会社CuboRex編 <a href="https://youtu.be/ChsQPQ7ot8g?si=okh_Cx5mhFmOO-fX" target="_blank">［動画を見る］</a></span></div></li>
 						<li><span class="date">2026.01</span><div class="credit-text"><span class="nobreak-title"><strong>J-WAVE「ENEOS FOR OUR EARTH -ONE BY ONE-」</strong> ゲスト出演</span></div></li>
-						<li><span class="date">2025.01</span><div class="credit-text"><span class="nobreak-title"><strong>雑誌「ロトナンバーズビンゴ5」表紙</strong> </span><span class="indent-block">/ ロト娘特集ページ掲載</span></div></li>
+						<li><span class="date">2025.01</span><div class="credit-text"><span class="nobreak-title"><strong>雑誌preferences「ロトナンバーズビンゴ5」表紙</strong> </span><span class="indent-block">/ ロト娘特集ページ掲載</span></div></li>
 						<li><span class="date">2022.09</span><div class="credit-text"><span class="nobreak-title"><strong>映画【タピオカ学入門】</strong> 今井 役 </span><span class="indent-block">(ひぐらし☆、早稲田大学映画研究会)</span></div></li>
 						<li><span class="date">2022.09</span><div class="credit-text"><span class="nobreak-title"><strong>映画【グレーゾーン】</strong> めい 役 </span><span class="indent-block">(日本大学藝術学部放送学科卒業制作作品)</span></div></li>
 						<li><span class="date">2021.08</span><div class="credit-text"><span class="nobreak-title"><strong>映画【娘娘瓦解】</strong> ゆき 役 </span><span class="indent-block">(早稲田大学映画研究会)</span></div></li>
@@ -390,7 +396,7 @@
 					</p>
 					<h3 class="section-title"><span style="display: inline-block;">その他 出演実績</span><span style="display: inline-block;">（映画・ドラマ・メディア等）</span></h3>
 					<p class="inline-credits">
-						Nissy(西島隆弘) MV / 石田雄介監督 NETFLIXドラマ / Paraviドラマ「復讐の未亡人」 / 映画「太陽とボレロ」 / 映画 "A3!" / 井上靖雄監督映画 / 某ウェルス・マネジメント会社 WEBムービー / WOWOWドラマ「邪神の天秤」 / テレビ東京「生きるとか死ぬとか父親とか」
+						Nissy(西島隆弘) MV / 石田雄介監督 NETFLIXドラマ / Paraviドラマ「復讐の未亡人」 / 映画 "A3!" / 井上靖雄監督映画 / 某ウェルス・マネジメント会社 WEBムービー / WOWOWドラマ「邪神の天秤」 / テレビ東京「生きるとか死ぬとか父親とか」
 					</p>
 				</article>
 				<!-- Photos -->
