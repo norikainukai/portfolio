@@ -14,7 +14,6 @@
 			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.08em; }
 			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.15em !important; text-transform: none !important; }
 			
-			/* 💡 寄りすぎを絶対に許さない：ヘッダーの左右に特大の余白（padding）を強制注入！ */
 			#header {
 				padding: 2.5em 40px !important;
 				margin: 0 auto !important;
@@ -41,14 +40,15 @@
 			h3.section-title { border-left: none; border-bottom: 2px solid #111111; padding-bottom: 5px; margin-top: 35px; margin-bottom: 20px; font-size: 1.05em; font-weight: 700; color: #111111 !important; }
 			article p, article li, .force-white { color: #111111 !important; opacity: 1 !important; font-weight: 400 !important; line-height: 1.8; }
 			
-			/* 📸 宣材写真（大）が枠からはみ出さないための最強設定 */
+			/* 📸 PCでの巨大化をブロック！上品に収まる宣材写真ブレーキ設定 */
 			.image.main {
 				width: 100% !important;
-				max-width: 100% !important;
-				margin: 0 0 2em 0 !important;
+				max-width: 350px !important; /* 💡 パソコン画面でも最大この幅で美しくストップ！ */
+				margin: 0 auto 2em auto !important; /* 💡 縦長写真が中央に綺麗に並ぶ魔法 */
 				padding: 0 !important;
 				overflow: hidden;
 				border-radius: 4px;
+				display: block;
 			}
 			.image.main img {
 				width: 100% !important;
@@ -170,7 +170,7 @@
 						<li><span class="date">2025.09</span> <strong>「下水道の日フェスティバル2025」</strong> のりのり&ひなひなサイエンスショー <span style="font-size:0.85em; color:#555;">(主催：東京都虹の下水道館)</span></li>
 						<li><span class="date">2025.08</span> <strong>「ワオ未来塾」オンライン サイエンスショー</strong></li>
 						<li><span class="date">2025.08</span> <strong>夏休み自由研究ワークショップ オリジナルプラネタリウムを作ろう</strong> <span style="font-size:0.85em; color:#555;">(主催：オリナス錦糸町)</span></li>
-						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> <span style="font-size:0.85em; color:#555;">(EXPOメッセ「WASSE」世界青少年発明工夫展 ダイキンブース内)</span></li>
+						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> <span style="font-size:0.85em; color:#555;">(EXPOメッセ「WASSE()」世界青少年発明工夫展 ダイキンブース内)</span></li>
 						<li><span class="date">2025.08</span> <strong>九州電力「夏休み 親子自由研究教室」</strong> <span style="font-size:0.85em; color:#555;">(会場：センテラス天文館 / センノオト)</span></li>
 						<li><span class="date">2025.07</span> <strong>「おもしろ科学館2025inほろのべ」</strong> サイエンスキングダム <span style="font-size:0.85em; color:#555;">(主催：経済産業省北海道経済産業局、幌延町)</span></li>
 						<li><span class="date">2025.07</span> <strong>「コミュタン福島ギモン★ハンター」</strong> 再生可能エネルギーや地球温暖化がわかるサイエンスショー！</li>
