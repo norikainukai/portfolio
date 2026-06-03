@@ -21,42 +21,43 @@
 			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.08em; }
 			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.15em !important; text-transform: none !important; }
 			
-			/* 💻 PC・タブレット環境（画面幅737px以上）の最適化レイアウト（2枚目のサイズ感に調整） */
+			/* 💻 PC・タブレット環境（画面幅737px以上）の最適化レイアウト（100%ズーム時に最も美しく見える黄金比） */
 			@media screen and (min-width: 737px) {
-				body { font-size: 17px !important; } /* 文字を窮屈にしない程よいサイズ */
+				body { font-size: 17px !important; } 
 				
-				/* 2枚目（image_e53e85.png）の広々とした高級感を再現 */
+				/* 画面に対してボックスが広がりすぎないように上限をキュッと締める */
 				#wrapper {
-					max-width: 1200px !important; /* 横幅の上限を広げてゆったり見せる */
+					max-width: 950px !important; 
 					margin: 0 auto !important;
-					padding: 50px 30px !important;
+					padding: 30px 20px !important; /* 上下の無駄な余白を詰めて締まりを出す */
 				}
 				
-				#header h1 { font-size: 4.2em !important; margin-bottom: 0.3em !important; } /* お名前を堂々と美しく */
-				#header p.name-en { font-size: 1.2em !important; max-width: 400px !important; }
+				#header { padding: 1.5em 20px !important; } /* 名前の上の余白を程よく調整 */
+				#header h1 { font-size: 4.5em !important; margin-bottom: 0.2em !important; } /* お名前をパッと目を引く大きさに */
+				#header p.name-en { font-size: 1.2em !important; max-width: 400px !important; margin-bottom: 1.2em !important; }
 				
-				/* メインコンテンツ（各セクション）の横幅と余白の最適化 */
+				/* メインコンテンツ（各セクション）の横幅を名前やボタンの幅と綺麗に調和させる */
 				#main {
 					width: 100% !important;
-					max-width: 1000px !important; /* ボックスを横に心地よく広げる */
+					max-width: 720px !important; /* 横に広がりすぎて間伸びするのを防ぐ絶妙なサイズ */
 					margin: 0 auto !important;
 				}
 				#main article { 
-					padding: 65px 70px !important; /* 縦横の余白を贅沢に取ってプロっぽく */
+					padding: 55px 60px !important; 
 				}
 				
-				h2.major { font-size: 2.5em !important; }
-				h3.section-title { font-size: 1.3em !important; }
-				.credit-list { font-size: 0.98em !important; }
-				.inline-credits { font-size: 0.98em !important; }
+				h2.major { font-size: 2.4em !important; }
+				h3.section-title { font-size: 1.25em !important; }
+				.credit-list { font-size: 0.95em !important; }
+				.inline-credits { font-size: 0.95em !important; }
 
-				/* PCでのナビゲーションボタンを美しく等間隔に並べる */
+				/* ナビゲーションボタンが中央にバランスよくまとまるサイズ */
 				#header nav ul {
-					max-width: 800px !important;
+					max-width: 700px !important;
 				}
 				#header nav ul li a {
-					width: 145px !important; /* ボタンが小さくポツンと見えないよう横幅を調整 */
-					padding: 15px 0 !important;
+					width: 135px !important; 
+					padding: 14px 0 !important;
 					font-size: 1em !important;
 				}
 			}
@@ -119,10 +120,10 @@
 			h3.section-title { border-left: none; border-bottom: 2px solid #111111; padding-bottom: 5px; margin-top: 35px; margin-bottom: 20px; font-size: 1.05em; font-weight: 700; color: #111111 !important; }
 			article p, article li, .force-white { color: #111111 !important; opacity: 1 !important; font-weight: 400 !important; line-height: 1.8; }
 			
-			/* 📸 宣材写真（PC画面の広さに合わせて程よく存在感を出すサイズ） */
+			/* 📸 宣材写真 */
 			.image.main { width: 100% !important; max-width: 320px !important; margin: 0 auto 2em auto !important; padding: 0 !important; overflow: hidden; border-radius: 4px; display: block; }
 			@media screen and (min-width: 737px) {
-				.image.main { max-width: 420px !important; }
+				.image.main { max-width: 380px !important; }
 			}
 			.image.main img { width: 100% !important; height: auto !important; display: block; object-fit: contain !important; }
 
@@ -275,7 +276,7 @@
 			@media screen and (min-width: 580px) {
 				.credit-list li { 
 					flex-direction: row !important; 
-					align-items: center !important; /* PCでは日付とテキストの縦ラインを綺麗に中央揃え */
+					align-items: center !important; 
 				}
 			}
 			.credit-list span.date { color: #0066cc !important; font-family: 'Playfair Display', serif; margin-right: 20px; font-size: 0.95em; font-weight: 700; display: inline-block; min-width: 75px; flex-shrink: 0; }
@@ -296,7 +297,7 @@
 			#bg { background: #ffffff !important; }
 			#bg:after, #bg:before { display: none !important; }
 
-			/* 📸 フォトギャラリー（PCでは3カラムで綺麗に並ぶ） */
+			/* 📸 フォトギャラリー */
 			.photo-grid { 
 				column-count: 2 !important; 
 				column-gap: 15px !important; 
@@ -422,7 +423,7 @@
 					<p class="inline-credits">
 						求人検索メディア「ウィルオブ」WEB-CM / カルビー TV-CM（福原遥さん スタンドイン） / 西武園ゆうえんち TV-CM / 東京国際工科専門職大学 TV-CM / 決済ブランド会社V社 WEB-CM / 某大手学校法人 WEB-CM / HIMAWARIシャンプー CM
 					</p>
-					<h3 class="section-title"><span style="display: inline-block;">その他 出任実績</span><span style="display: inline-block;">（映画・ドラマ・メディア等）</span></h3>
+					<h3 class="section-title"><span style="display: inline-block;">その他 出演実績</span><span style="display: inline-block;">（映画・ドラマ・メディア等）</span></h3>
 					<p class="inline-credits">
 						Nissy(西島隆弘) MV / 石田雄介監督 NETFLIXドラマ / Paraviドラマ「復讐の未亡人」 / 映画「太陽とボレロ」 / 映画 "A3!" / 井上靖雄監督映画 / 某ウェルス・マネジメント会社 WEBムービー / WOWOWドラマ「邪神の天秤」 / テレビ東京「生きるとか死ぬとか父親とか」
 					</p>
