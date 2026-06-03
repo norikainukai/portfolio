@@ -80,7 +80,7 @@
 			.image.main { width: 100% !important; max-width: 350px !important; margin: 0 auto 2em auto !important; padding: 0 !important; overflow: hidden; border-radius: 4px; display: block; }
 			.image.main img { width: 100% !important; height: auto !important; display: block; object-fit: contain !important; }
 
-			/* 🛑 箇条書き・ボタンリストのリセットと余白追加（隙間バグの修正） */
+			/* 🛑 箇条書き・ボタンリストのリセットと余白追加 */
 			article ul, article li {
 				list-style: none !important;
 				padding-left: 0 !important;
@@ -110,7 +110,7 @@
 				margin-bottom: 0 !important;
 			}
 			
-			/* 🔲 通常の白背景四角ボタン */
+			/* 🔲 通常の白背景四角ボタン（映像資料などに適用して目立たせる！） */
 			.button { 
 				display: block !important;
 				width: 100% !important;
@@ -139,6 +139,29 @@
 				background-color: #444444 !important; 
 				background: #444444 !important; 
 				color: #ffffff !important; 
+			}
+
+			/* 🏢 【新設】所属・提携用：すっきり上品な見栄えにするための専用CSS */
+			.office-list {
+				width: 100% !important;
+				max-width: 450px !important;
+				margin: 0 auto 1.5em auto !important;
+				text-align: center !important;
+			}
+			.office-list li {
+				margin-bottom: 12px !important;
+			}
+			.office-list a {
+				display: inline-block !important;
+				color: #111111 !important;
+				text-decoration: none !important;
+				font-weight: 500 !important;
+				border-bottom: 1px solid #111111 !important;
+				padding-bottom: 2px;
+				transition: opacity 0.3s ease;
+			}
+			.office-list a:hover {
+				opacity: 0.6 !important;
 			}
 
 			/* ✉️ コンタクト専用メールボタン設定 */
@@ -173,7 +196,7 @@
 				}
 			}
 			
-			/* 🔗 モノトーンで上質なスマート矢印リンク */
+			/* 🔗 SNSや動画用のスマート矢印リンク */
 			.link-list { list-style: none !important; padding-left: 0 !important; margin: 0 !important; }
 			.link-list li { margin-bottom: 15px !important; list-style: none !important; background: transparent !important; padding-left: 0 !important; }
 			.link-list a { display: inline-block !important; color: #111111 !important; text-decoration: none !important; font-weight: 500 !important; border-bottom: 1px solid #cccccc !important; padding-bottom: 2px; transition: all 0.3s; background: transparent !important; }
@@ -272,10 +295,11 @@
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 					<h3 class="section-title">所属・提携</h3>
-					<ul class="actions stacked">
-						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" class="button" target="_blank">🏢 所属事務所：カレーラ</a></li>
-						<li><a href="https://agency.wao.ne.jp/talent/t_023.html" class="button" target="_blank">🤝 業務提携：ワオエージェンシー</a></li>
-						<li><a href="https://agency.wao.ne.jp/talent/t_025.html" class="button" target="_blank">👭 のりのり＆ひなひな</a></li>
+					<!-- 🏢 【改良】枠線を消してスッキリ洗練された並びに変更 -->
+					<ul class="office-list">
+						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" target="_blank">🏢 所属事務所：カレーラ</a></li>
+						<li><a href="https://agency.wao.ne.jp/talent/t_023.html" target="_blank">🤝 業務提携：ワオエージェンシー</a></li>
+						<li><a href="https://agency.wao.ne.jp/talent/t_025.html" target="_blank">👭 のりのり＆ひなひな</a></li>
 					</ul>
 				</article>
 				<!-- Data -->
@@ -285,15 +309,15 @@
 					
 					<h3 class="section-title">コンポジ・プロフィール</h3>
 					<ul class="actions stacked">
-						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 コンポジPDFを見る</a></li>
-						<!-- 📄 スマホの時だけ（）の前で綺麗に改行させる微調整 -->
+						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
 						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール<br class="pc-hide"> (Googleドキュメント)</a></li>
 					</ul>
 
 					<h3 class="section-title">メイン映像資料</h3>
-					<ul class="link-list">
-						<li><a href="https://youtu.be/NyMtCvn_d6Y" target="_blank">🎬 お芝居映像（YouTube）</a></li>
-						<li><a href="https://youtu.be/RhJwwL_xcL8" target="_blank">🧪 サイエンスショー（YouTube）</a></li>
+					<!-- 🎬 【改良】動画リンクを白枠のオフィシャル四角ボタンに格上げしてパッと目立たせる -->
+					<ul class="actions stacked">
+						<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 お芝居映像（YouTube）</a></li>
+						<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 サイエンスショー（YouTube）</a></li>
 					</ul>
 					
 					<h3 class="section-title">主な出演作・掲載実績（映画・特許庁公式映像・ラジオ・雑誌等）</h3>
@@ -366,7 +390,7 @@
 						<li><a href="mailto:acterwoman917vo@gmail.com" class="button contact-email">✉ acterwoman917vo@gmail.com</a></li>
 					</ul>
 					
-					<p style="margin-top: 30px; text-align: center; font-size: 0.95em;">または、Instagram of <strong>@norika_inukai</strong> のDMまでお気軽にお問い合わせください。</p>
+					<p style="margin-top: 30px; text-align: center; font-size: 0.95em;">または、Instagramの <strong>@norika_inukai</strong> のDMまでお気軽にお問い合わせください。</p>
 					
 					<h3 class="section-title">Official SNS Links</h3>
 					<ul class="link-list">
