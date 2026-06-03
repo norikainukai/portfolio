@@ -80,8 +80,8 @@
 			.image.main { width: 100% !important; max-width: 350px !important; margin: 0 auto 2em auto !important; padding: 0 !important; overflow: hidden; border-radius: 4px; display: block; }
 			.image.main img { width: 100% !important; height: auto !important; display: block; object-fit: contain !important; }
 
-			/* 🛑 箇条書きの不要な装飾をリセット */
-			article ul, article li, .actions, .actions li {
+			/* 🛑 箇条書き・ボタンリストのリセットと余白追加（隙間バグの修正） */
+			article ul, article li {
 				list-style: none !important;
 				padding-left: 0 !important;
 				margin-left: 0 !important;
@@ -89,10 +89,32 @@
 				background-color: transparent !important; 
 				border: none !important;
 			}
+			.actions {
+				list-style: none !important;
+				padding-left: 0 !important;
+				margin: 0 auto 2em auto !important;
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: center !important;
+				width: 100% !important;
+			}
+			.actions li {
+				width: 100% !important;
+				max-width: 450px !important;
+				margin: 0 0 15px 0 !important; /* ボタン同士の縦の隙間を確実に15px空ける */
+				padding: 0 !important;
+				text-align: center !important;
+				background: transparent !important;
+			}
+			.actions li:last-child {
+				margin-bottom: 0 !important;
+			}
 			
-			/* 🔲 オフィシャル四角ボタン */
+			/* 🔲 通常の白背景四角ボタン */
 			.button { 
-				display: inline-block !important;
+				display: block !important;
+				width: 100% !important;
+				box-sizing: border-box !important;
 				border-radius: 4px !important; 
 				border: 1px solid #111111 !important; 
 				background: #ffffff !important; 
@@ -100,16 +122,44 @@
 				color: #111111 !important; 
 				font-weight: 700 !important; 
 				text-decoration: none !important;
-				padding: 12px 24px !important;
+				padding: 12px 20px !important;
 				transition: all 0.3s ease;
 				box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-				width: auto !important;
+				text-align: center !important;
 			}
 			.button:hover { background-color: #111111 !important; color: #ffffff !important; box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important; }
 			
-			/* 塗りつぶしボタン（最重要リンク用） */
-			.button.primary { background-color: #111111 !important; color: #ffffff !important; background: #111111 !important; }
-			.button.primary:hover { background-color: #444444 !important; background: #444444 !important; color: #ffffff !important; }
+			/* 塗りつぶしボタン（最重要リンク用：ProfileやData用） */
+			.button.primary { 
+				background-color: #111111 !important; 
+				color: #ffffff !important; 
+				background: #111111 !important; 
+			}
+			.button.primary:hover { 
+				background-color: #444444 !important; 
+				background: #444444 !important; 
+				color: #ffffff !important; 
+			}
+
+			/* ✉️ 【はみ出し対策】コンタクト専用メールボタン設定 */
+			.button.contact-email {
+				background-color: #111111 !important;
+				color: #ffffff !important;
+				background: #111111 !important;
+				font-size: 0.95em !important; /* スマホ文字溢れ防止 */
+				padding: 14px 15px !important;
+				word-break: break-all !important; /* 万が一の時の自動改行保険 */
+			}
+			.button.contact-email:hover {
+				background-color: #444444 !important;
+				background: #444444 !important;
+				color: #ffffff !important;
+			}
+			@media screen and (max-width: 400px) {
+				.button.contact-email {
+					font-size: 0.82em !important; /* 画面が極端に小さいスマホ用 */
+				}
+			}
 			
 			/* 🔗 モノトーンで上質なスマート矢印リンク */
 			.link-list { list-style: none !important; padding-left: 0 !important; margin: 0 !important; }
@@ -143,24 +193,24 @@
 			#bg { background: #ffffff !important; }
 			#bg:after, #bg:before { display: none !important; }
 
-			/* 📸 【大改良】横長も縦長も絶対に切らない！ピンタレスト風（多段カラム）レイアウト */
+			/* 📸 横長も縦長も絶対に切らない！ピンタレスト風（多段カラム）レイアウト */
 			.photo-grid { 
-				column-count: 2 !important; /* スマホでは綺麗に2列 */
-				column-gap: 15px !important; /* 写真同士の横の隙間 */
+				column-count: 2 !important; 
+				column-gap: 15px !important; 
 				margin-top: 30px !important; 
 				width: 100% !important;
 			}
 			@media screen and (min-width: 737px) {
 				.photo-grid { 
-					column-count: 3 !important; /* パソコンやタブレットでは3列 */
+					column-count: 3 !important; 
 					column-gap: 20px !important; 
 				}
 			}
 			.photo-item { 
 				display: block !important;
 				width: 100% !important;
-				margin-bottom: 15px !important; /* 写真同士の縦の隙間 */
-				break-inside: avoid !important; /* 途中で写真が分裂するのを防ぐ */
+				margin-bottom: 15px !important; 
+				break-inside: avoid !important; 
 				border-radius: 8px !important; 
 				overflow: hidden !important; 
 				background: #ffffff !important; 
@@ -173,7 +223,7 @@
 			}
 			.photo-item img { 
 				width: 100% !important; 
-				height: auto !important; /* 比率を100%維持して絶対に切り取らない */
+				height: auto !important; 
 				display: block !important; 
 				object-fit: contain !important; 
 			}
@@ -208,7 +258,7 @@
 					<h2 class="major">Profile</h2>
 					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
-					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
+					<p>お芝芝、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 					<h3 class="section-title">所属・提携</h3>
 					<ul class="actions stacked">
 						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" class="button" target="_blank">🏢 所属事務所：カレーラ</a></li>
@@ -299,8 +349,8 @@
 					<h2 class="major">Contact</h2>
 					<p style="text-align: center; margin-bottom: 25px;">お仕事のご依頼・お問い合わせは、下記メールアドレス、またはInstagramのDMへお願いいたします。</p>
 					
-					<ul class="actions stacked" style="text-align: center;">
-						<li><a href="mailto:acterwoman917vo@gmail.com" class="button primary" style="font-size: 1.05em; padding: 14px 32px !important;">✉ acterwoman917vo@gmail.com</a></li>
+					<ul class="actions stacked">
+						<li><a href="mailto:acterwoman917vo@gmail.com" class="button contact-email">✉ acterwoman917vo@gmail.com</a></li>
 					</ul>
 					
 					<p style="margin-top: 30px; text-align: center; font-size: 0.95em;">または、Instagramの <strong>@norika_inukai</strong> のDMまでお気軽にお問い合わせください。</p>
