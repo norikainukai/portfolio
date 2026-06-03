@@ -110,7 +110,7 @@
 				margin-bottom: 0 !important;
 			}
 			
-			/* 🔲 通常の白背景四角ボタン（映像資料などに適用して目立たせる！） */
+			/* 🔲 通常の白背景四角ボタン（映像資料などに適用） */
 			.button { 
 				display: block !important;
 				width: 100% !important;
@@ -141,15 +141,17 @@
 				color: #ffffff !important; 
 			}
 
-			/* 🏢 【新設】所属・提携用：すっきり上品な見栄えにするための専用CSS */
+			/* 🏢 【変更】所属・提携用：きっちり左寄せで見せるための設定 */
 			.office-list {
+				display: block !important;
 				width: 100% !important;
-				max-width: 450px !important;
-				margin: 0 auto 1.5em auto !important;
-				text-align: center !important;
+				max-width: 280px !important; /* 中央に綺麗に収まるサイズに制限 */
+				margin: 0 auto 2em auto !important;
+				text-align: left !important; /* ← ここでしっかり左寄せに！ */
 			}
 			.office-list li {
-				margin-bottom: 12px !important;
+				margin-bottom: 14px !important;
+				padding-left: 5px !important;
 			}
 			.office-list a {
 				display: inline-block !important;
@@ -295,7 +297,7 @@
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
 					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 					<h3 class="section-title">所属・提携</h3>
-					<!-- 🏢 【改良】枠線を消してスッキリ洗練された並びに変更 -->
+					<!-- 🏢 【改良】枠なし＆きれいに左寄せに揃うスマートなリスト -->
 					<ul class="office-list">
 						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" target="_blank">🏢 所属事務所：カレーラ</a></li>
 						<li><a href="https://agency.wao.ne.jp/talent/t_023.html" target="_blank">🤝 業務提携：ワオエージェンシー</a></li>
@@ -314,7 +316,6 @@
 					</ul>
 
 					<h3 class="section-title">メイン映像資料</h3>
-					<!-- 🎬 【改良】動画リンクを白枠のオフィシャル四角ボタンに格上げしてパッと目立たせる -->
 					<ul class="actions stacked">
 						<li><a href="https://youtu.be/NyMtCvn_d6Y" class="button" target="_blank">🎬 お芝居映像（YouTube）</a></li>
 						<li><a href="https://youtu.be/RhJwwL_xcL8" class="button" target="_blank">🧪 サイエンスショー（YouTube）</a></li>
