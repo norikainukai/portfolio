@@ -101,7 +101,7 @@
 			.actions li {
 				width: 100% !important;
 				max-width: 450px !important;
-				margin: 0 0 15px 0 !important; /* ボタン同士の縦の隙間を確実に15px空ける */
+				margin: 0 0 15px 0 !important; 
 				padding: 0 !important;
 				text-align: center !important;
 				background: transparent !important;
@@ -129,7 +129,7 @@
 			}
 			.button:hover { background-color: #111111 !important; color: #ffffff !important; box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important; }
 			
-			/* 塗りつぶしボタン（最重要リンク用：ProfileやData用） */
+			/* 塗りつぶしボタン（最重要リンク用） */
 			.button.primary { 
 				background-color: #111111 !important; 
 				color: #ffffff !important; 
@@ -141,14 +141,14 @@
 				color: #ffffff !important; 
 			}
 
-			/* ✉️ 【はみ出し対策】コンタクト専用メールボタン設定 */
+			/* ✉️ コンタクト専用メールボタン設定 */
 			.button.contact-email {
 				background-color: #111111 !important;
 				color: #ffffff !important;
 				background: #111111 !important;
-				font-size: 0.95em !important; /* スマホ文字溢れ防止 */
+				font-size: 0.95em !important; 
 				padding: 14px 15px !important;
-				word-break: break-all !important; /* 万が一の時の自動改行保険 */
+				word-break: break-all !important; 
 			}
 			.button.contact-email:hover {
 				background-color: #444444 !important;
@@ -157,7 +157,19 @@
 			}
 			@media screen and (max-width: 400px) {
 				.button.contact-email {
-					font-size: 0.82em !important; /* 画面が極端に小さいスマホ用 */
+					font-size: 0.82em !important; 
+				}
+			}
+
+			/* 📱 スマホの時だけ改行させるための便利設定 */
+			.pc-hide {
+				display: none !important;
+			}
+			@media screen and (max-width: 480px) {
+				.pc-hide {
+					display: block !important;
+					content: "" !important;
+					margin-top: 4px !important;
 				}
 			}
 			
@@ -258,7 +270,7 @@
 					<h2 class="major">Profile</h2>
 					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
 					<p>俳優・サイエンスパフォーマーとして活動している犬飼 紀香（Norika Inukai）です。</p>
-					<p>お芝芝、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
+					<p>お芝居、そして科学の魅力を伝えるサイエンスショーなど、観てくださる方の心に届くパフォーマンスを目指し、幅広く活動しています。</p>
 					<h3 class="section-title">所属・提携</h3>
 					<ul class="actions stacked">
 						<li><a href="https://www.carrera-co.jp/entm/inukai-norika.html" class="button" target="_blank">🏢 所属事務所：カレーラ</a></li>
@@ -271,10 +283,11 @@
 					<h2 class="major">Data</h2>
 					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
 					
-					<h3 class="section-title">プロフィール・コンポジ</h3>
+					<h3 class="section-title">コンポジ・プロフィール</h3>
 					<ul class="actions stacked">
-						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール (Googleドキュメント)</a></li>
-						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 新しいコンポジPDFを見る</a></li>
+						<li><a href="https://drive.google.com/file/d/1lUhZnmk9Zb0pWWAw7ZniMJz05_chJsn9/view?usp=drive_link" class="button primary" target="_blank">📋 コンポジPDFを見る</a></li>
+						<!-- 📄 スマホの時だけ（）の前で綺麗に改行させる微調整 -->
+						<li><a href="https://docs.google.com/document/d/17e1yXLF6GJFu20c3ia1nXrMG8fc2SdyA58AnqIZ2hJE/edit?usp=drive_link" class="button primary" target="_blank">📄 プロフィール<br class="pc-hide"> (Googleドキュメント)</a></li>
 					</ul>
 
 					<h3 class="section-title">メイン映像資料</h3>
@@ -353,7 +366,7 @@
 						<li><a href="mailto:acterwoman917vo@gmail.com" class="button contact-email">✉ acterwoman917vo@gmail.com</a></li>
 					</ul>
 					
-					<p style="margin-top: 30px; text-align: center; font-size: 0.95em;">または、Instagramの <strong>@norika_inukai</strong> のDMまでお気軽にお問い合わせください。</p>
+					<p style="margin-top: 30px; text-align: center; font-size: 0.95em;">または、Instagram of <strong>@norika_inukai</strong> のDMまでお気軽にお問い合わせください。</p>
 					
 					<h3 class="section-title">Official SNS Links</h3>
 					<ul class="link-list">
