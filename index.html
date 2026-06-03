@@ -34,17 +34,58 @@
 			#header h1 { font-size: 2.5em; font-weight: 500; margin-bottom: 0.2em; text-align: center !important; display: block; width: 100%; }
 			#header p.name-en { font-size: 0.85em; font-style: italic; color: #444; border-bottom: 1px solid #ccc; padding-bottom: 1.5em; margin: 0 auto 1.5em auto !important; max-width: 250px; text-align: center !important; }
 			
+			/* 🛑 ダサい「・」を完全に消し去り、メニューを美しい横並びにする魔法 */
+			#header nav {
+				margin-top: 2em !important;
+				width: 100% !important;
+			}
+			#header nav ul {
+				display: flex !important;
+				flex-wrap: wrap !important;
+				justify-content: center !important;
+				align-items: center !important;
+				list-style: none !important; /* 💡 これであの「・」が消滅します！ */
+				padding-left: 0 !important;
+				margin: 0 auto !important;
+				border: none !important;
+				max-width: 500px !important;
+			}
+			#header nav ul li {
+				display: inline-block !important;
+				list-style: none !important; /* 💡 ここでも念押しで「・」を消去！ */
+				padding: 0 !important;
+				margin: 10px 15px !important; /* ボタン同士の絶妙な間隔 */
+			}
+			#header nav ul li a {
+				display: inline-block !important;
+				min-width: 80px !important;
+				height: auto !important;
+				line-height: 1 !important;
+				padding: 8px 16px !important;
+				border: 1px solid #111111 !important; /* 上品な細い黒枠のボタンに */
+				border-radius: 4px !important;
+				font-size: 0.9em !important;
+				font-weight: 500 !important;
+				letter-spacing: 0.1em !important;
+				text-decoration: none !important;
+				transition: all 0.3s ease !important;
+			}
+			#header nav ul li a:hover {
+				background-color: #111111 !important;
+				color: #ffffff !important; /* 触ったときに反転して白文字黒背景になるかっこいい演出 */
+			}
+
 			article { background-color: #ffffff !important; padding: 40px 30px !important; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border: 1px solid #ddd; }
 			h2.major { text-align: center !important; margin-bottom: 1.5em !important; color: #111111 !important; }
 			h2.major:after { left: 50% !important; transform: translateX(-50%); width: 60px !important; border-bottom-color: #111111 !important; }
 			h3.section-title { border-left: none; border-bottom: 2px solid #111111; padding-bottom: 5px; margin-top: 35px; margin-bottom: 20px; font-size: 1.05em; font-weight: 700; color: #111111 !important; }
 			article p, article li, .force-white { color: #111111 !important; opacity: 1 !important; font-weight: 400 !important; line-height: 1.8; }
 			
-			/* 📸 PCでの巨大化をブロック！上品に収まる宣材写真ブレーキ設定 */
+			/* 📸 宣材写真ブレーキ設定 */
 			.image.main {
 				width: 100% !important;
-				max-width: 350px !important; /* 💡 パソコン画面でも最大この幅で美しくストップ！ */
-				margin: 0 auto 2em auto !important; /* 💡 縦長写真が中央に綺麗に並ぶ魔法 */
+				max-width: 350px !important;
+				margin: 0 auto 2em auto !important;
 				padding: 0 !important;
 				overflow: hidden;
 				border-radius: 4px;
@@ -107,7 +148,8 @@
 						<p style="font-size:0.85em; letter-spacing:0.15em; color:#333;">Actor / Science Performer Portfolio</p>
 					</div>
 				</div>
-				<nav><ul style="border-color:#ccc;">
+				<!-- 🧭 ここからメニュー：あの「・」を消し去って美しく横並びにボタン化！ -->
+				<nav><ul>
 					<li><a href="#intro" style="color:#111;">Profile</a></li>
 					<li><a href="#work" style="color:#111;">Data</a></li>
 					<li><a href="#about" style="color:#111;">Photos</a></li>
@@ -153,7 +195,7 @@
 						<li><span class="date">2022.09</span> <strong>映画【タピオカ学入門】</strong> 今井 役 <span style="font-size:0.85em; color:#555;">(ひぐらし☆、早稲田大学映画研究会)</span></li>
 						<li><span class="date">2022.09</span> <strong>映画【グレーゾーン】</strong> めい 役 <span style="font-size:0.85em; color:#555;">(日本大学藝術学部放送学科卒業制作作品)</span></li>
 						<li><span class="date">2021.08</span> <strong>映画【娘娘瓦解】</strong> ゆき 役 <span style="font-size:0.85em; color:#555;">(早稲田大学映画研究会)</span></li>
-						<li><span class="date">2021.06</span> <strong>映画【ものをいう】</strong> 先輩 役 <span style="font-size:0.85em; color:#555;">(早稲田大学映画研究会)</span></li>
+						<li><span class="date">2021.06</span> <strong>映画【ものをいう】</strong> 先輩 役 <span style="font-size:0.85em; color:#555;">(早esign 稲田大学映画研究会)</span></li>
 					</ul>
 					<h3 class="section-title">サイエンスショー・イベント出演実績</h3>
 					<ul class="credit-list">
@@ -170,11 +212,11 @@
 						<li><span class="date">2025.09</span> <strong>「下水道の日フェスティバル2025」</strong> のりのり&ひなひなサイエンスショー <span style="font-size:0.85em; color:#555;">(主催：東京都虹の下水道館)</span></li>
 						<li><span class="date">2025.08</span> <strong>「ワオ未来塾」オンライン サイエンスショー</strong></li>
 						<li><span class="date">2025.08</span> <strong>夏休み自由研究ワークショップ オリジナルプラネタリウムを作ろう</strong> <span style="font-size:0.85em; color:#555;">(主催：オリナス錦糸町)</span></li>
-						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> <span style="font-size:0.85em; color:#555;">(EXPOメッセ「WASSE()」世界青少年発明工夫展 ダイキンブース内)</span></li>
+						<li><span class="date">2025.08</span> <strong>大阪・関西万博 EXPOサイエンスショー</strong> <span style="font-size:0.85em; color:#555;">(EXPOメッセ「WASSE」世界青少年発明工夫展 ダイキンブース内)</span></li>
 						<li><span class="date">2025.08</span> <strong>九州電力「夏休み 親子自由研究教室」</strong> <span style="font-size:0.85em; color:#555;">(会場：センテラス天文館 / センノオト)</span></li>
 						<li><span class="date">2025.07</span> <strong>「おもしろ科学館2025inほろのべ」</strong> サイエンスキングダム <span style="font-size:0.85em; color:#555;">(主催：経済産業省北海道経済産業局、幌延町)</span></li>
 						<li><span class="date">2025.07</span> <strong>「コミュタン福島ギモン★ハンター」</strong> 再生可能エネルギーや地球温暖化がわかるサイエンスショー！</li>
-						<li><span class="date">2025.03</span> <strong>「ふくしま再エネファミリーラボ2025」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(主催：福島県エネルギー課)</span></li>
+						<li><span class="date">2025.03</span> <strong>「ふくしま再エネファミリーラボ2025"」</strong> サイエンスショー <span style="font-size:0.85em; color:#555;">(主催：福島県エネルギー課)</span></li>
 					</ul>
 					<h3 class="section-title">その他 出演実績（広告・CM等）</h3>
 					<p class="inline-credits">
