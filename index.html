@@ -15,18 +15,22 @@
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2 family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,500;1,500&swap" rel="stylesheet">
 		<style>
 			/* 🌐 基本フォントと最強の見やすさ設定 */
 			body, input, select, textarea, button, .button { font-family: 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.08em; }
 			h1, h2, h3, h4, p.name-en { font-family: 'Playfair Display', 'Noto Serif JP', serif !important; color: #111111 !important; letter-spacing: 0.15em !important; text-transform: none !important; }
 			
-			/* 💻 パソコン全画面の時の自動拡大 */
-			@media screen and (min-width: 1280px) {
-				body { font-size: 16px !important; }
-				#main article { padding: 50px 45px !important; }
-				h2.major { font-size: 2em !important; }
-				.credit-list { font-size: 1em !important; }
+			/* 💻 タブレット・PC環境での文字サイズ・余白の最適化（スマホの最高さは維持） */
+			@media screen and (min-width: 737px) {
+				body { font-size: 18px !important; } /* 全体のベース文字を18pxに拡大 */
+				#header h1 { font-size: 3em !important; } /* 名前を少し大きく */
+				#header p.name-en { font-size: 0.95em !important; }
+				#main article { padding: 60px 50px !important; } /* 余白を広げてゆったり見せる */
+				h2.major { font-size: 2.2em !important; } /* 見出しを強調 */
+				h3.section-title { font-size: 1.2em !important; }
+				.credit-list { font-size: 0.95em !important; } /* 出演実績の文字をクッキリ */
+				.inline-credits { font-size: 0.95em !important; }
 			}
 
 			/* 🏢 ヘッダー全体の余白調整 */
