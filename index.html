@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<!-- Dimension by HTML5 UP | html5up.net -->
 <html>
 	<head>
 		<title>犬飼 紀香 | Portfolio</title>
@@ -29,7 +30,7 @@
 			#header h1 { font-size: 2.5em; font-weight: 500; margin-bottom: 0.2em; text-align: center !important; display: block; width: 100%; }
 			#header p.name-en { font-size: 0.85em; font-style: italic; color: #444; border-bottom: 1px solid #ccc; padding-bottom: 1.5em; margin: 0 auto 1.5em auto !important; max-width: 250px; text-align: center !important; }
 			
-			/* 🧭 【修正済】メニューボタンが絶対に揃うバグなし設定 */
+			/* 🧭 メニューボタンが絶対に揃うバグなし設定 */
 			#header nav { margin-top: 2em !important; width: 100% !important; display: flex !important; justify-content: center !important; }
 			#header nav ul { 
 				display: flex !important; 
@@ -110,58 +111,75 @@
 			.button.primary { background-color: #111111 !important; color: #ffffff !important; background: #111111 !important; }
 			.button.primary:hover { background-color: #444444 !important; background: #444444 !important; color: #ffffff !important; }
 			
-			/* 🔗 【改良】モノトーンで上質なスマート矢印リンク */
+			/* 🔗 モノトーンで上質なスマート矢印リンク */
 			.link-list { list-style: none !important; padding-left: 0 !important; margin: 0 !important; }
 			.link-list li { margin-bottom: 15px !important; list-style: none !important; background: transparent !important; padding-left: 0 !important; }
 			.link-list a { display: inline-block !important; color: #111111 !important; text-decoration: none !important; font-weight: 500 !important; border-bottom: 1px solid #cccccc !important; padding-bottom: 2px; transition: all 0.3s; background: transparent !important; }
 			.link-list a:before { content: "→ " !important; color: #111111 !important; font-weight: bold; margin-right: 8px; }
 			.link-list a:hover { color: #666666 !important; border-bottom-color: #111111 !important; }
 
-			/* 【改良】リスト形式の実績用（スマホで綺麗に並ぶよう調整） */
-			.credit-list { list-style: none !important; padding-left: 0 !important; font-size: 0.92em; line-height: 1.8; }
-			.credit-list li { margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px dashed #ddd; color: #111111 !important; list-style: none !important; background: transparent !important; display: flex; flex-direction: column; align-items: flex-start; }
-			@media screen and (min-width: 480px) {
-				.credit-list li { flex-direction: row; align-items: flex-start; }
+			/* 📋 リスト形式の実績（うすい点線を完全に維持） */
+			.credit-list { list-style: none !important; padding-left: 0 !important; font-size: 0.92em; line-height: 1.8; margin: 0 !important; }
+			.credit-list li { 
+				margin-bottom: 0 !important; 
+				padding: 12px 0 !important; 
+				border-bottom: 1px dashed #ccc !important;
+				color: #111111 !important; 
+				list-style: none !important; 
+				background: transparent !important; 
+				display: flex !important; 
+				flex-direction: column !important; 
+				align-items: flex-start !important; 
 			}
-			.credit-list span.date { color: #555555 !important; font-family: 'Playfair Display', serif; margin-right: 15px; font-size: 0.95em; font-weight: 700; display: inline-block; min-width: 65px; flex-shrink: 0; }
+			.credit-list li:last-child { border-bottom: none !important; }
+			
+			@media screen and (min-width: 480px) {
+				.credit-list li { flex-direction: row !important; align-items: flex-start !important; }
+			}
+			.credit-list span.date { color: #0066cc !important; font-family: 'Playfair Display', serif; margin-right: 15px; font-size: 0.95em; font-weight: 700; display: inline-block; min-width: 65px; flex-shrink: 0; }
 			.credit-list .credit-text { flex-grow: 1; }
 			.inline-credits { font-size: 0.9em; line-height: 2; color: #111111 !important; text-align: justify; margin-bottom: 0; }
 			
 			#bg { background: #ffffff !important; }
 			#bg:after, #bg:before { display: none !important; }
 
-			/* 📸 立体フレックスギャラリー */
+			/* 📸 【大改良】横長も縦長も絶対に切らない！ピンタレスト風（多段カラム）レイアウト */
 			.photo-grid { 
-				display: flex !important; 
-				flex-wrap: wrap !important;
-				justify-content: center !important;
-				align-items: flex-start !important; 
-				gap: 20px !important; 
+				column-count: 2 !important; /* スマホでは綺麗に2列 */
+				column-gap: 15px !important; /* 写真同士の横の隙間 */
 				margin-top: 30px !important; 
+				width: 100% !important;
+			}
+			@media screen and (min-width: 737px) {
+				.photo-grid { 
+					column-count: 3 !important; /* パソコンやタブレットでは3列 */
+					column-gap: 20px !important; 
+				}
 			}
 			.photo-item { 
-				position: relative !important; 
-				width: calc(50% - 10px) !important; 
-				max-width: 200px !important; 
+				display: block !important;
+				width: 100% !important;
+				margin-bottom: 15px !important; /* 写真同士の縦の隙間 */
+				break-inside: avoid !important; /* 途中で写真が分裂するのを防ぐ */
 				border-radius: 8px !important; 
 				overflow: hidden !important; 
 				background: #ffffff !important; 
-				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important; 
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; 
 				transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease !important; 
 				cursor: pointer !important; 
 			}
 			@media screen and (min-width: 737px) {
-				.photo-item { width: calc(33.333% - 14px) !important; } 
+				.photo-item { margin-bottom: 20px !important; }
 			}
 			.photo-item img { 
 				width: 100% !important; 
-				height: auto !important; 
+				height: auto !important; /* 比率を100%維持して絶対に切り取らない */
 				display: block !important; 
 				object-fit: contain !important; 
 			}
 			.photo-item:hover { 
-				transform: translateY(-8px) scale(1.03) !important; 
-				box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25) !important; 
+				transform: translateY(-5px) scale(1.02) !important; 
+				box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; 
 				z-index: 10 !important;
 			}
 		</style>
@@ -185,6 +203,7 @@
 				</ul></nav>
 			</header>
 			<div id="main">
+				<!-- Profile -->
 				<article id="intro">
 					<h2 class="major">Profile</h2>
 					<span class="image main"><img src="pic01.jpg.jpg" alt="犬飼紀香 宣材写真" /></span>
@@ -197,6 +216,7 @@
 						<li><a href="https://agency.wao.ne.jp/talent/t_025.html" class="button" target="_blank">👭 のりのり＆ひなひな</a></li>
 					</ul>
 				</article>
+				<!-- Data -->
 				<article id="work">
 					<h2 class="major">Data</h2>
 					<span class="image main"><img src="pic02.jpg.jpg" alt="犬飼紀香 宣材写真全身" /></span>
@@ -254,6 +274,7 @@
 						Nissy(西島隆弘) MV / 石田雄介監督 NETFLIXドラマ / Paraviドラマ「復讐の未亡人」 / 映画「太陽とボレロ」 / 映画 "A3!" / 井上靖雄監督映画 / 某ウェルス・マネジメント会社 WEBムービー / WOWOWドラマ「邪神の天秤」 / テレビ東京「生きるとか死ぬとか父親とか」
 					</p>
 				</article>
+				<!-- Photos -->
 				<article id="about">
 					<h2 class="major">Photos</h2>
 					<p style="text-align: center; color: #333; margin-bottom: 2em;">被写体・宣材写真などのギャラリーです。</p>
@@ -273,6 +294,7 @@
 						<div class="photo-item"><img src="pic15.JPG" alt="写真15" /></div>
 					</div>
 				</article>
+				<!-- Contact -->
 				<article id="contact">
 					<h2 class="major">Contact</h2>
 					<p style="text-align: center; margin-bottom: 25px;">お仕事のご依頼・お問い合わせは、下記メールアドレス、またはInstagramのDMへお願いいたします。</p>
