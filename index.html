@@ -301,35 +301,40 @@
 			#bg { background: #ffffff !important; }
 			#bg:after, #bg:before { display: none !important; }
 
-			/* 📸 フォトギャラリー（1. Masonry自動整列 & 2. ホバーアニメーション） */
+			/* 📸 フォトギャラリー（完全レスポンシブ＆全デバイス最適化） */
 			.photo-grid { 
-				width: 100% !important;
+				column-count: 2 !important; /* スマホ：2列 */
+				column-gap: 12px !important; 
 				margin-top: 30px !important; 
+				width: 100% !important;
 			}
-
-			/* スマホ：2列 */
+			@media screen and (min-width: 580px) {
+				.photo-grid { 
+					column-count: 3 !important; /* タブレット：3列 */
+					column-gap: 16px !important; 
+				}
+			}
+			@media screen and (min-width: 900px) {
+				.photo-grid { 
+					column-count: 4 !important; /* 大画面PC：4列 */
+					column-gap: 20px !important; 
+				}
+			}
 			.photo-item { 
-				width: calc(50% - 6px) !important;
+				display: block !important;
+				width: 100% !important;
 				margin-bottom: 12px !important; 
-				float: left !important;
+				break-inside: avoid !important; /* 画像の途中切れを防止 */
 				border-radius: 6px !important; 
 				overflow: hidden !important; 
 				background: #ffffff !important; 
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; 
+				transition: transform 0.3s ease, box-shadow 0.3s ease !important; 
 				cursor: pointer !important; 
-				/* ホバー時のカーソルアニメーション動作 */
-				transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease !important; 
 			}
-
-			/* PC：4列 */
 			@media screen and (min-width: 737px) {
-				.photo-item { 
-					width: calc(25% - 15px) !important;
-					margin-bottom: 20px !important; 
-					border-radius: 8px !important; 
-				}
+				.photo-item { margin-bottom: 16px !important; border-radius: 8px !important; }
 			}
-
 			.photo-item img { 
 				width: 100% !important; 
 				height: auto !important; 
@@ -337,14 +342,12 @@
 				object-fit: contain !important; 
 				pointer-events: auto !important;
 			}
-
-			/* 🎯 カーソルを乗せた時の動き（ホバー・アクティブ） */
-			.photo-item:hover, .photo-item:active { 
+			.photo-item:hover { 
 				transform: translateY(-4px) scale(1.02) !important; 
-				box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18) !important; 
+				box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important; 
 			}
 
-			/* 🔍 3. 画像拡大表示（ライトボックスオーバーレイ） */
+			/* 🔍 画像拡大表示（最前面固定） */
 			#lightbox-overlay {
 				position: fixed !important;
 				top: 0 !important;
@@ -352,20 +355,16 @@
 				width: 100vw !important;
 				height: 100vh !important;
 				background: rgba(0, 0, 0, 0.92) !important;
-				display: flex !important;
+				display: none !important;
 				justify-content: center !important;
 				align-items: center !important;
-				z-index: 2147483647 !important; /* 最前面に固定 */
-				opacity: 0;
-				pointer-events: none;
-				transition: opacity 0.25s ease;
+				z-index: 2147483647 !important; /* 最前面に強制配置 */
+				cursor: pointer !important;
 				padding: 20px !important;
 				box-sizing: border-box !important;
-				cursor: pointer !important;
 			}
 			#lightbox-overlay.active {
-				opacity: 1;
-				pointer-events: auto;
+				display: flex !important;
 			}
 			#lightbox-overlay img {
 				max-width: 95% !important;
@@ -546,7 +545,7 @@
 		</div>
 		<div id="bg"></div>
 
-		<!-- 🔍 画像拡大用オーバーレイ（最も後ろに配置） -->
+		<!-- 🔍 画像拡大用オーバーレイ（最も後ろに配置して重なり順を一番上にする） -->
 		<div id="lightbox-overlay">
 			<img id="lightbox-img" src="" alt="拡大画像">
 		</div>
@@ -557,47 +556,13 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-		<!-- 📦 Masonry（並べ替え）＆ imagesLoaded ライブラリを追加 -->
-		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-		<script src="https://unpkg.com/masonry-layout@4/masonry.pkgd.min.js"></script>
-
 		<script>
+			// 確実に動作させる純粋なJavaScriptによるクリック拡大イベント
 			window.addEventListener('DOMContentLoaded', function() {
-				var grid = document.querySelector('.photo-grid');
-				var msnry = null;
-
-				// 1. 自動整列（Masonry）の初期化処理
-				function initMasonry() {
-					if (!grid) return;
-					imagesLoaded(grid, function() {
-						msnry = new Masonry(grid, {
-							itemSelector: '.photo-item',
-							percentPosition: true,
-							horizontalOrder: true
-						});
-					});
-				}
-
-				initMasonry();
-
-				// 2. Photosタブを開いた瞬間に再計算させる（Dimensionテーマ特有の非表示対策）
-				var photoTabBtn = document.querySelector('a[href="#about"]');
-				if (photoTabBtn) {
-					photoTabBtn.addEventListener('click', function() {
-						setTimeout(function() {
-							if (msnry) {
-								msnry.layout();
-							} else {
-								initMasonry();
-							}
-						}, 200); // アニメーション後に再計算
-					});
-				}
-
-				// 3. クリック拡大（ライトボックス）処理
 				var overlay = document.getElementById('lightbox-overlay');
 				var overlayImg = document.getElementById('lightbox-img');
 
+				// DOM全体のイベントを監視してPhotoギャラリーの画像クリックのみ捕捉
 				document.addEventListener('click', function(e) {
 					var target = e.target;
 					
@@ -626,3 +591,4 @@
 		</script>
 	</body>
 </html>
+
