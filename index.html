@@ -316,7 +316,7 @@
 			}
 			@media screen and (min-width: 900px) {
 				.photo-grid { 
-					column-count: 4 !important; /* 大画面PC：4列（枚数が多い時に綺麗に収まる） */
+					column-count: 4 !important; /* 大画面PC：4列 */
 					column-gap: 20px !important; 
 				}
 			}
@@ -331,7 +331,6 @@
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; 
 				transition: transform 0.3s ease, box-shadow 0.3s ease !important; 
 				cursor: pointer !important; 
-				backface-visibility: hidden;
 			}
 			@media screen and (min-width: 737px) {
 				.photo-item { margin-bottom: 16px !important; border-radius: 8px !important; }
@@ -341,46 +340,38 @@
 				height: auto !important; 
 				display: block !important; 
 				object-fit: contain !important; 
+				pointer-events: auto !important;
 			}
 			.photo-item:hover { 
 				transform: translateY(-4px) scale(1.02) !important; 
 				box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important; 
-				z-index: 10 !important;
 			}
 
-			/* 🔍 画像拡大表示（ライトボックス）用スタイル（PC・スマホ共通最適化） */
+			/* 🔍 画像拡大表示（最前面固定） */
 			#lightbox-overlay {
 				position: fixed !important;
 				top: 0 !important;
 				left: 0 !important;
 				width: 100vw !important;
 				height: 100vh !important;
-				background: rgba(0, 0, 0, 0.9) !important;
-				display: none;
+				background: rgba(0, 0, 0, 0.92) !important;
+				display: none !important;
 				justify-content: center !important;
 				align-items: center !important;
-				z-index: 99999 !important;
+				z-index: 2147483647 !important; /* 最前面に強制配置 */
 				cursor: pointer !important;
-				opacity: 0;
-				transition: opacity 0.25s ease !important;
-				padding: 20px;
-				box-sizing: border-box;
+				padding: 20px !important;
+				box-sizing: border-box !important;
 			}
 			#lightbox-overlay.active {
 				display: flex !important;
-				opacity: 1;
 			}
 			#lightbox-overlay img {
 				max-width: 95% !important;
 				max-height: 90vh !important;
 				object-fit: contain !important;
-				border-radius: 6px;
-				box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-				cursor: pointer !important;
-				transition: transform 0.2s ease;
-			}
-			body.lightbox-open {
-				overflow: hidden !important;
+				border-radius: 6px !important;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
 			}
 		</style>
 	</head>
@@ -554,7 +545,7 @@
 		</div>
 		<div id="bg"></div>
 
-		<!-- 🔍 画像拡大用オーバーレイ -->
+		<!-- 🔍 画像拡大用オーバーレイ（最も後ろに配置して重なり順を一番上にする） -->
 		<div id="lightbox-overlay">
 			<img id="lightbox-img" src="" alt="拡大画像">
 		</div>
@@ -566,33 +557,34 @@
 		<script src="assets/js/main.js"></script>
 
 		<script>
-			// Photosギャラリー画像クリック時の拡大＆解除処理（PC・スマホ両対応）
-			$(document).ready(function() {
-				var $overlay = $('#lightbox-overlay');
-				var $overlayImg = $('#lightbox-img');
+			// 確実に動作させる純粋なJavaScriptによるクリック拡大イベント
+			window.addEventListener('DOMContentLoaded', function() {
+				var overlay = document.getElementById('lightbox-overlay');
+				var overlayImg = document.getElementById('lightbox-img');
 
-				// 画像をクリックしたら拡大表示
-				$('.photo-item img').on('click', function(e) {
-					e.preventDefault();
-					e.stopPropagation(); // テンプレート側の他処理への伝播を防止
+				// DOM全体のイベントを監視してPhotoギャラリーの画像クリックのみ捕捉
+				document.addEventListener('click', function(e) {
+					var target = e.target;
 					
-					var src = $(this).attr('src');
-					$overlayImg.attr('src', src);
-					$overlay.addClass('active');
-					$('body').addClass('lightbox-open'); // スマホ閲覧時の背景スクロールを防止
+					// クリックされたのがphoto-item内のimgだった場合
+					if (target && target.tagName === 'IMG' && target.closest('.photo-item')) {
+						e.preventDefault();
+						e.stopPropagation();
+						
+						overlayImg.src = target.src;
+						overlay.classList.add('active');
+					}
+				}, true);
+
+				// オーバーレイをクリックしたら閉じる
+				overlay.addEventListener('click', function() {
+					overlay.classList.remove('active');
 				});
 
-				// オーバーレイ全体（画像・背景問わず）クリックで元に戻る
-				$overlay.on('click', function() {
-					$overlay.removeClass('active');
-					$('body').removeClass('lightbox-open');
-				});
-
-				// ESCキーでも閉じられるように設定
-				$(document).on('keydown', function(e) {
-					if (e.key === "Escape" && $overlay.hasClass('active')) {
-						$overlay.removeClass('active');
-						$('body').removeClass('lightbox-open');
+				// ESCキーで閉じる
+				document.addEventListener('keydown', function(e) {
+					if (e.key === "Escape") {
+						overlay.classList.remove('active');
 					}
 				});
 			});
